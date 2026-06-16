@@ -1,6 +1,6 @@
 """The :class:`PersonaFactory` — the single high-level entrypoint.
 
-Generation is two-phase (PLAN.md §3.3):
+Generation is two-phase:
 
 1. **Sample** every enabled domain independently, in dependency order, each with
    its own derived RNG sub-stream so toggling one domain does not perturb others.

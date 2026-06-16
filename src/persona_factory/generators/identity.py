@@ -1,6 +1,6 @@
 """Identity / demographics generator.
 
-This generator owns the *intra-identity* key-links described in PLAN.md §3.3:
+This generator owns the *intra-identity* key-links:
 
 * ``gender + locale -> given/family name`` (name pools are gender- & locale-
   partitioned; locales with ``name_order == "family_first"`` order the full

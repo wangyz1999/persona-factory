@@ -4,7 +4,7 @@ Design rules:
 
 * Every field is **optional** (defaults to ``None`` or an empty collection) so a
   caller can request any subset of attributes without tripping validation.
-* Sub-models mirror the attribute taxonomy in ``PLAN.md`` §2.
+* Sub-models mirror the attribute taxonomy, one per attribute domain.
 * Models are pydantic v2, so ``.model_dump()``, ``.model_dump_json()`` and JSON
   schema export all come for free. Rendering helpers live in
   :mod:`persona_factory.rendering` and are attached as thin methods here.
