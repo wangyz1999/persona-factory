@@ -98,6 +98,11 @@ class PersonaConfig(BaseModel):
     locale_weights: dict[str, float] | None = None
     seed: int | str | None = None
 
+    #: Reference year for age<->date-of-birth math. Fixed (not the wall clock)
+    #: so personas stay reproducible, but overridable so callers can keep ages
+    #: current as real time advances without forking the source.
+    reference_year: int = 2025
+
     include: list[str] | None = None
     exclude: list[str] = Field(default_factory=list)
 

@@ -109,6 +109,7 @@ class PersonaFactory:
         persona.meta = {
             "locale": config.locale,
             "seed": effective_seed,
+            "reference_year": config.reference_year,
             "domains": ordered_domains(enabled),
         }
         return persona
