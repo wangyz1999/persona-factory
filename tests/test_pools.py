@@ -74,6 +74,16 @@ def test_negative_size_rejected() -> None:
         PersonaFactory("en_US", seed=1).generate_pool(-1)
 
 
+def test_to_dataframe_flattens_to_dotted_columns() -> None:
+    pl = pytest.importorskip("polars")
+    pool = PersonaFactory("en_US", seed=1).generate_pool(5)
+    df = pool.to_dataframe()
+    assert isinstance(df, pl.DataFrame)
+    assert df.height == 5
+    assert "identity.given_name" in df.columns
+    assert "identity.gender" in df.columns
+
+
 def test_locale_weights_drive_pool_locales() -> None:
     from persona_factory.config import PersonaConfig
 

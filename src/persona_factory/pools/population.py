@@ -75,15 +75,37 @@ class PersonaPool:
         )
 
     def to_dataframe(self) -> Any:
-        """Return a flat :class:`pandas.DataFrame` (requires the ``pandas`` extra)."""
+        """Return a flat :class:`polars.DataFrame` (requires the ``polars`` extra).
+
+        Each persona becomes one row; nested domains are flattened into
+        dotted columns (e.g. ``identity.given_name``, ``physical.height_cm``).
+        List-valued attributes are kept as list columns.
+        """
         try:
-            import pandas as pd  # type: ignore[import-untyped]
+            import polars as pl
         except ImportError as exc:  # pragma: no cover - optional dep
             raise ImportError(
-                "PersonaPool.to_dataframe requires the 'pandas' extra: "
-                "pip install persona-factory[pandas]"
+                "PersonaPool.to_dataframe requires the 'polars' extra: "
+                "pip install 'persona-factory[polars]'"
             ) from exc
-        return pd.json_normalize(self.to_list())
+        rows = [_flatten_dict(p.to_dict()) for p in self._personas]
+        return pl.DataFrame(rows)
+
+
+def _flatten_dict(data: dict[str, Any], prefix: str = "") -> dict[str, Any]:
+    """Flatten one level of nested domain dicts into dotted keys.
+
+    Nested objects (sub-models) become ``parent.child`` columns; lists and
+    scalars are left as-is so polars can infer list/scalar column types.
+    """
+    flat: dict[str, Any] = {}
+    for key, value in data.items():
+        dotted = f"{prefix}{key}"
+        if isinstance(value, dict):
+            flat.update(_flatten_dict(value, prefix=f"{dotted}."))
+        else:
+            flat[dotted] = value
+    return flat
 
 
 def _resolve_path(persona: Persona, path: str) -> Any:

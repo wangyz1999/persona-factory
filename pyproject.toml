@@ -45,9 +45,9 @@ Documentation = "https://github.com/yunzhewa/persona-factory#readme"
 
 [project.optional-dependencies]
 enrichment = ["anthropic>=0.40"]
-pandas = ["pandas>=2.0"]
+polars = ["polars>=1.0"]
 yaml = ["pyyaml>=6.0"]
-all = ["anthropic>=0.40", "pandas>=2.0", "pyyaml>=6.0"]
+all = ["anthropic>=0.40", "polars>=1.0", "pyyaml>=6.0"]
 
 [project.scripts]
 persona-factory = "persona_factory.cli:main"
