@@ -1,7 +1,7 @@
 <h1 align="center">🎭 persona-factory</h1>
 
 <p align="center">
-  <img width="1774" height="887" alt="persona-factory banner" src="https://github.com/user-attachments/assets/00fe95cf-f062-436b-9641-e7478400e640" />
+  <img width="1774" height="887" alt="persona-factory banner" src="assets/banner.png" />
 </p>
 
 <p align="center">
