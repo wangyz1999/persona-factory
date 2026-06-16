@@ -1,12 +1,8 @@
 <h1 align="center">🎭 persona-factory</h1>
 
-<!-- TODO(banner): the previous user-attachments URL 404'd. Drag-and-drop a banner
-     image into this file on github.com to upload it, then restore the block below
-     with the new URL (or point src at an in-repo asset such as assets/banner.png).
 <p align="center">
-  <img width="1774" height="887" alt="persona-factory banner" src="REPLACE_WITH_BANNER_URL" />
+  <img width="1774" height="887" alt="persona-factory banner" src="assets/banner.png" />
 </p>
--->
 
 <p align="center">
   <em>Generate richly-attributed, coherent fake personas — and pools of them —<br>
