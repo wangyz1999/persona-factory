@@ -4,6 +4,7 @@ Subcommands::
 
     persona-factory generate [--locale ..] [--seed ..] [--format ..] [overrides]
     persona-factory pool --n N [--locale ..] [--seed ..] [--format jsonl] [--out FILE]
+                          [--dist KEY=VALUE:WEIGHT,...]
     persona-factory locales        # list bundled locales
     persona-factory presets        # list bundled presets
     persona-factory schema         # dump the Persona JSON schema
@@ -63,6 +64,17 @@ def _build_parser() -> argparse.ArgumentParser:
         help="output format (default: jsonl)",
     )
     pool.add_argument("--out", help="write output to this file instead of stdout")
+    pool.add_argument(
+        "--dist",
+        action="append",
+        default=[],
+        metavar="KEY=VALUE:WEIGHT,...",
+        help=(
+            "target an aggregate distribution for one override keyword, e.g. "
+            "--dist gender=female:0.5,male:0.5 (repeatable). Each keyword's "
+            "values are allocated independently of the others."
+        ),
+    )
 
     # -- info commands -----------------------------------------------------
     sub.add_parser("locales", help="list bundled locales")
@@ -104,6 +116,41 @@ def _coerce_value(value: str) -> Any:
         except ValueError:
             continue
     return value
+
+
+def _parse_distributions(specs: list[str]) -> dict[str, dict[Any, float]] | None:
+    """Parse ``--dist`` specs into a ``{keyword: {value: weight}}`` mapping.
+
+    Each spec is ``KEY=VALUE:WEIGHT,VALUE:WEIGHT,...``; weights need not sum to
+    one (the pool normalizes them). A bare ``VALUE`` defaults to weight ``1``.
+    """
+    if not specs:
+        return None
+    distributions: dict[str, dict[Any, float]] = {}
+    for spec in specs:
+        if "=" not in spec:
+            raise SystemExit(f"invalid --dist {spec!r}; expected KEY=VALUE:WEIGHT,...")
+        key, body = spec.split("=", 1)
+        weights: dict[Any, float] = {}
+        for part in body.split(","):
+            part = part.strip()
+            if not part:
+                continue
+            if ":" in part:
+                value, weight = part.rsplit(":", 1)
+                try:
+                    w = float(weight)
+                except ValueError:
+                    raise SystemExit(
+                        f"invalid weight in --dist {spec!r}: {weight!r} is not a number"
+                    ) from None
+            else:
+                value, w = part, 1.0
+            weights[_coerce_value(value.strip())] = w
+        if not weights:
+            raise SystemExit(f"invalid --dist {spec!r}; no values given")
+        distributions[key.strip()] = weights
+    return distributions
 
 
 def _make_factory(args: argparse.Namespace) -> PersonaFactory:
@@ -149,7 +196,8 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     if args.command == "pool":
-        pool = factory.generate_pool(args.n)
+        distributions = _parse_distributions(args.dist)
+        pool = factory.generate_pool(args.n, distributions=distributions)
         if args.format == "jsonl":
             output = pool.to_jsonl()
         else:

@@ -53,6 +53,20 @@ def test_pool_to_file(tmp_path, capsys) -> None:
     assert len(out.read_text().strip().splitlines()) == 3
 
 
+def test_pool_with_distribution(capsys) -> None:
+    rc = main(["pool", "--n", "100", "--seed", "1", "--dist", "gender=female:0.5,male:0.5"])
+    assert rc == 0
+    lines = capsys.readouterr().out.strip().splitlines()
+    genders = [json.loads(line)["identity"]["gender"] for line in lines]
+    assert genders.count("female") == 50
+    assert genders.count("male") == 50
+
+
+def test_pool_invalid_distribution() -> None:
+    with pytest.raises(SystemExit):
+        main(["pool", "--n", "5", "--dist", "no-equals-sign"])
+
+
 def test_locales_command(capsys) -> None:
     assert main(["locales"]) == 0
     assert "en_US" in capsys.readouterr().out
