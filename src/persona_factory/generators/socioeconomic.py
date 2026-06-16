@@ -81,12 +81,19 @@ class SocioeconomicGenerator(Generator):
         )
         education = as_enum(education, EducationLevel)
 
+        employment_fixed = is_fixed(config, "socioeconomic.employment_status")
+        employment = (
+            EmploymentStatus(employment_fixed)
+            if employment_fixed is not None
+            else EmploymentStatus.EMPLOYED_FULL_TIME
+        )
+
         socio = Socioeconomic(
             industry=industry,
             occupation=occupation,
             job_title=occupation,
             education_level=education,
-            employment_status=EmploymentStatus.EMPLOYED_FULL_TIME,
+            employment_status=employment,
             social_class=as_enum(
                 pick(rng, config, "socioeconomic.social_class", list(SocialClass)),
                 SocialClass,
