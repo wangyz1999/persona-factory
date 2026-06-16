@@ -52,9 +52,7 @@ class _FakeOpenAIClient:
 
     def __init__(self, payload: dict) -> None:
         self.captured: dict = {}
-        self.chat = SimpleNamespace(
-            completions=_FakeChatCompletions(payload, self.captured)
-        )
+        self.chat = SimpleNamespace(completions=_FakeChatCompletions(payload, self.captured))
 
 
 def _persona():  # type: ignore[no-untyped-def]

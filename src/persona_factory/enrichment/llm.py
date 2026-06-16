@@ -138,8 +138,7 @@ def enrich(
 
     if provider not in DEFAULT_MODELS:
         raise EnrichmentError(
-            f"Unknown provider {provider!r}. Choose one of: "
-            f"{', '.join(sorted(DEFAULT_MODELS))}."
+            f"Unknown provider {provider!r}. Choose one of: {', '.join(sorted(DEFAULT_MODELS))}."
         )
     if model is None:
         model = DEFAULT_MODELS[provider]
@@ -162,9 +161,7 @@ def enrich(
     return persona
 
 
-def _call_anthropic(
-    prompt: str, *, model: str, client: Any | None, max_tokens: int
-) -> str:
+def _call_anthropic(prompt: str, *, model: str, client: Any | None, max_tokens: int) -> str:
     """Call Claude via the anthropic SDK and return the raw JSON text."""
     if client is None:
         anthropic = _load_sdk("anthropic", "anthropic")
