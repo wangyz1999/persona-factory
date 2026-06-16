@@ -1,0 +1,23 @@
+{
+  "country": "United States",
+  "country_code": "US",
+  "language": "English",
+  "language_code": "en",
+  "script": "Latin",
+  "currency": "USD",
+  "timezones": ["America/New_York", "America/Chicago", "America/Denver", "America/Los_Angeles", "America/Phoenix"],
+  "given_names": {
+    "male": ["James", "Michael", "Robert", "John", "David", "William", "Richard", "Joseph", "Thomas", "Christopher", "Daniel", "Matthew", "Anthony", "Mark", "Andrew", "Joshua", "Ethan", "Noah", "Liam", "Mason", "Logan", "Jacob", "Benjamin", "Elijah", "Lucas"],
+    "female": ["Mary", "Patricia", "Jennifer", "Linda", "Elizabeth", "Barbara", "Susan", "Jessica", "Sarah", "Karen", "Emily", "Emma", "Olivia", "Ava", "Sophia", "Isabella", "Mia", "Charlotte", "Amelia", "Harper", "Grace", "Chloe", "Victoria", "Madison", "Abigail"],
+    "unisex": ["Taylor", "Jordan", "Alex", "Morgan", "Casey", "Riley", "Avery", "Quinn", "Cameron", "Skyler", "Jamie", "Reese"]
+  },
+  "surnames": ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Rodriguez", "Martinez", "Hernandez", "Lopez", "Gonzalez", "Wilson", "Anderson", "Thomas", "Taylor", "Moore", "Jackson", "Martin", "Lee", "Perez", "Thompson", "White", "Harris", "Clark", "Lewis", "Robinson", "Walker", "Young"],
+  "cities": ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego", "Dallas", "Austin", "Seattle", "Denver", "Boston", "Portland", "Nashville", "Atlanta"],
+  "regions": ["California", "Texas", "Florida", "New York", "Pennsylvania", "Illinois", "Ohio", "Georgia", "Washington", "Massachusetts", "Colorado", "Oregon", "Tennessee", "Arizona"],
+  "street_suffixes": ["St", "Ave", "Blvd", "Dr", "Ln", "Rd", "Way", "Ct", "Pl"],
+  "street_names": ["Main", "Oak", "Pine", "Maple", "Cedar", "Elm", "Washington", "Lake", "Hill", "Park", "Sunset", "River", "Highland", "Franklin"],
+  "address_format": "{number} {street} {suffix}",
+  "postal_format": "#####",
+  "phone_format": "(###) ###-####",
+  "email_domains": ["gmail.com", "yahoo.com", "outlook.com", "hotmail.com", "icloud.com"]
+}

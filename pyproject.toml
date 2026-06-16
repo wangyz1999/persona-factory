@@ -74,7 +74,8 @@ src = ["src", "tests"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "W", "N", "C4", "SIM"]
-ignore = ["E501"]
+# E501: line length handled by formatter; SIM102: nested guards read clearer here
+ignore = ["E501", "SIM102"]
 
 [tool.mypy]
 python_version = "3.10"

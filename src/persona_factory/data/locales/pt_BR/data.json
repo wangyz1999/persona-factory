@@ -1,0 +1,23 @@
+{
+  "country": "Brazil",
+  "country_code": "BR",
+  "language": "Portuguese",
+  "language_code": "pt",
+  "script": "Latin",
+  "currency": "BRL",
+  "timezones": ["America/Sao_Paulo", "America/Bahia", "America/Manaus"],
+  "given_names": {
+    "male": ["Miguel", "Arthur", "Heitor", "Bernardo", "Davi", "Théo", "Gabriel", "Pedro", "Lorenzo", "Matheus", "Lucas", "Rafael", "João", "Carlos", "Paulo", "Bruno", "Felipe", "Rodrigo", "Gustavo", "Eduardo"],
+    "female": ["Helena", "Alice", "Laura", "Maria", "Sophia", "Manuela", "Valentina", "Júlia", "Heloísa", "Luiza", "Cecília", "Isabella", "Ana", "Beatriz", "Letícia", "Mariana", "Camila", "Fernanda", "Patrícia", "Juliana"],
+    "unisex": ["Darci", "Ariel", "Alex", "Reni"]
+  },
+  "surnames": ["Silva", "Santos", "Oliveira", "Souza", "Rodrigues", "Ferreira", "Alves", "Pereira", "Lima", "Gomes", "Costa", "Ribeiro", "Martins", "Carvalho", "Almeida", "Lopes", "Soares", "Fernandes", "Vieira", "Barbosa"],
+  "cities": ["São Paulo", "Rio de Janeiro", "Brasília", "Salvador", "Fortaleza", "Belo Horizonte", "Manaus", "Curitiba", "Recife", "Porto Alegre", "Goiânia", "Belém", "Campinas", "Natal"],
+  "regions": ["São Paulo", "Rio de Janeiro", "Minas Gerais", "Bahia", "Paraná", "Rio Grande do Sul", "Pernambuco", "Ceará", "Pará", "Santa Catarina"],
+  "street_suffixes": ["Rua", "Avenida", "Travessa", "Praça", "Alameda"],
+  "street_names": ["das Flores", "Brasil", "São João", "Sete de Setembro", "Getúlio Vargas", "XV de Novembro", "do Comércio", "Santos Dumont", "Tiradentes", "da Paz"],
+  "address_format": "{suffix} {street}, {number}",
+  "postal_format": "#####-###",
+  "phone_format": "(##) #####-####",
+  "email_domains": ["gmail.com", "hotmail.com", "outlook.com.br", "yahoo.com.br", "uol.com.br"]
+}

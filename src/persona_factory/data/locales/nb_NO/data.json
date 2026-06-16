@@ -1,0 +1,23 @@
+{
+  "country": "Norway",
+  "country_code": "NO",
+  "language": "Norwegian",
+  "language_code": "nb",
+  "script": "Latin",
+  "currency": "NOK",
+  "timezones": ["Europe/Oslo"],
+  "given_names": {
+    "male": ["Jakob", "Emil", "Noah", "Oliver", "William", "Lucas", "Filip", "Aksel", "Oskar", "Magnus", "Henrik", "Mathias", "Jonas", "Sander", "Elias", "Ole", "Lars", "Erik", "Bjørn", "Anders"],
+    "female": ["Nora", "Emma", "Sara", "Sofie", "Olivia", "Ella", "Maja", "Emilie", "Ingrid", "Leah", "Frida", "Selma", "Anna", "Thea", "Linnea", "Kari", "Astrid", "Solveig", "Ida", "Marte"],
+    "unisex": ["Kim", "Robin", "Alex", "Stevie"]
+  },
+  "surnames": ["Hansen", "Johansen", "Olsen", "Larsen", "Andersen", "Pedersen", "Nilsen", "Kristiansen", "Jensen", "Karlsen", "Johnsen", "Pettersen", "Eriksen", "Berg", "Haugen", "Hagen", "Johannessen", "Andreassen", "Jacobsen", "Dahl"],
+  "cities": ["Oslo", "Bergen", "Trondheim", "Stavanger", "Drammen", "Fredrikstad", "Kristiansand", "Sandnes", "Tromsø", "Sarpsborg", "Bodø", "Ålesund", "Tønsberg", "Moss"],
+  "regions": ["Oslo", "Vestland", "Rogaland", "Trøndelag", "Viken", "Innlandet", "Vestfold og Telemark", "Agder", "Møre og Romsdal", "Troms og Finnmark"],
+  "street_suffixes": ["gate", "veien", "gata", "plass", "allé"],
+  "street_names": ["Stor", "Kirke", "Skole", "Park", "Strand", "Berg", "Nedre", "Øvre", "Sjø", "Bjørke"],
+  "address_format": "{street}{suffix} {number}",
+  "postal_format": "####",
+  "phone_format": "### ## ###",
+  "email_domains": ["gmail.com", "online.no", "outlook.com", "hotmail.no", "icloud.com"]
+}

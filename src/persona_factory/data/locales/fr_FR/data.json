@@ -1,0 +1,23 @@
+{
+  "country": "France",
+  "country_code": "FR",
+  "language": "French",
+  "language_code": "fr",
+  "script": "Latin",
+  "currency": "EUR",
+  "timezones": ["Europe/Paris"],
+  "given_names": {
+    "male": ["Jean", "Pierre", "Michel", "Louis", "Nicolas", "Thomas", "Lucas", "Hugo", "Gabriel", "Arthur", "Jules", "Léo", "Adam", "Raphaël", "Paul", "Antoine", "Maxime", "Alexandre", "Théo", "Nathan"],
+    "female": ["Marie", "Jeanne", "Camille", "Léa", "Chloé", "Manon", "Emma", "Sarah", "Louise", "Alice", "Lina", "Inès", "Jade", "Lola", "Juliette", "Clara", "Anaïs", "Zoé", "Charlotte", "Eva"],
+    "unisex": ["Camille", "Dominique", "Claude", "Sacha", "Maxime", "Alix"]
+  },
+  "surnames": ["Martin", "Bernard", "Thomas", "Petit", "Robert", "Richard", "Durand", "Dubois", "Moreau", "Laurent", "Simon", "Michel", "Lefebvre", "Leroy", "Roux", "David", "Bertrand", "Morel", "Fournier", "Girard"],
+  "cities": ["Paris", "Marseille", "Lyon", "Toulouse", "Nice", "Nantes", "Strasbourg", "Montpellier", "Bordeaux", "Lille", "Rennes", "Reims", "Toulon", "Grenoble"],
+  "regions": ["Île-de-France", "Provence-Alpes-Côte d'Azur", "Auvergne-Rhône-Alpes", "Occitanie", "Nouvelle-Aquitaine", "Hauts-de-France", "Grand Est", "Bretagne", "Normandie"],
+  "street_suffixes": ["Rue", "Avenue", "Boulevard", "Place", "Impasse", "Allée"],
+  "street_names": ["de la République", "Victor Hugo", "de la Gare", "des Écoles", "du Général de Gaulle", "Jean Jaurès", "de Paris", "de l'Église", "Pasteur", "de la Liberté"],
+  "address_format": "{number} {suffix} {street}",
+  "postal_format": "#####",
+  "phone_format": "06 ## ## ## ##",
+  "email_domains": ["gmail.com", "orange.fr", "free.fr", "outlook.fr", "wanadoo.fr"]
+}

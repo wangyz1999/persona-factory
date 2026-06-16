@@ -1,0 +1,23 @@
+{
+  "country": "Germany",
+  "country_code": "DE",
+  "language": "German",
+  "language_code": "de",
+  "script": "Latin",
+  "currency": "EUR",
+  "timezones": ["Europe/Berlin"],
+  "given_names": {
+    "male": ["Maximilian", "Alexander", "Paul", "Leon", "Lukas", "Felix", "Jonas", "Noah", "Elias", "Ben", "Finn", "Luis", "Henry", "Emil", "Anton", "Hans", "Peter", "Thomas", "Michael", "Andreas"],
+    "female": ["Marie", "Sophie", "Maria", "Emma", "Mia", "Hannah", "Emilia", "Lena", "Lea", "Anna", "Laura", "Lina", "Clara", "Johanna", "Ida", "Ursula", "Sabine", "Petra", "Julia", "Katharina"],
+    "unisex": ["Kim", "Toni", "Sascha", "Alex", "Mika"]
+  },
+  "surnames": ["Müller", "Schmidt", "Schneider", "Fischer", "Weber", "Meyer", "Wagner", "Becker", "Schulz", "Hoffmann", "Schäfer", "Koch", "Bauer", "Richter", "Klein", "Wolf", "Schröder", "Neumann", "Schwarz", "Zimmermann"],
+  "cities": ["Berlin", "Hamburg", "München", "Köln", "Frankfurt", "Stuttgart", "Düsseldorf", "Leipzig", "Dortmund", "Essen", "Bremen", "Dresden", "Hannover", "Nürnberg"],
+  "regions": ["Bayern", "Baden-Württemberg", "Nordrhein-Westfalen", "Hessen", "Niedersachsen", "Sachsen", "Berlin", "Hamburg", "Rheinland-Pfalz"],
+  "street_suffixes": ["straße", "weg", "allee", "platz", "gasse"],
+  "street_names": ["Haupt", "Bahnhof", "Garten", "Schul", "Kirch", "Berg", "Wald", "Linden", "Schiller", "Goethe"],
+  "address_format": "{street}{suffix} {number}",
+  "postal_format": "#####",
+  "phone_format": "01## #######",
+  "email_domains": ["gmail.com", "web.de", "gmx.de", "t-online.de", "outlook.de"]
+}

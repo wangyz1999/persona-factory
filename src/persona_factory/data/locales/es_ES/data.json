@@ -1,0 +1,23 @@
+{
+  "country": "Spain",
+  "country_code": "ES",
+  "language": "Spanish",
+  "language_code": "es",
+  "script": "Latin",
+  "currency": "EUR",
+  "timezones": ["Europe/Madrid"],
+  "given_names": {
+    "male": ["Antonio", "Manuel", "José", "Francisco", "David", "Juan", "Javier", "Daniel", "Carlos", "Jesús", "Alejandro", "Miguel", "Pablo", "Sergio", "Pedro", "Ángel", "Adrián", "Diego", "Hugo", "Álvaro"],
+    "female": ["María", "Carmen", "Ana", "Isabel", "Laura", "Lucía", "Marta", "Cristina", "Paula", "Sara", "Elena", "Sofía", "Andrea", "Carla", "Claudia", "Alba", "Julia", "Daniela", "Marina", "Noa"],
+    "unisex": ["Trinidad", "Reyes", "Cruz", "Guadalupe"]
+  },
+  "surnames": ["García", "Rodríguez", "González", "Fernández", "López", "Martínez", "Sánchez", "Pérez", "Gómez", "Martín", "Jiménez", "Ruiz", "Hernández", "Díaz", "Moreno", "Álvarez", "Romero", "Alonso", "Gutiérrez", "Navarro"],
+  "cities": ["Madrid", "Barcelona", "Valencia", "Sevilla", "Zaragoza", "Málaga", "Murcia", "Palma", "Bilbao", "Alicante", "Córdoba", "Granada", "Valladolid", "Vigo"],
+  "regions": ["Madrid", "Cataluña", "Andalucía", "Comunidad Valenciana", "Galicia", "Castilla y León", "País Vasco", "Canarias", "Aragón"],
+  "street_suffixes": ["Calle", "Avenida", "Plaza", "Paseo", "Camino"],
+  "street_names": ["Mayor", "Real", "Nueva", "del Sol", "de la Iglesia", "Gran Vía", "de España", "del Carmen", "San Juan", "de la Constitución"],
+  "address_format": "{suffix} {street}, {number}",
+  "postal_format": "#####",
+  "phone_format": "6## ## ## ##",
+  "email_domains": ["gmail.com", "hotmail.es", "outlook.es", "yahoo.es", "telefonica.net"]
+}

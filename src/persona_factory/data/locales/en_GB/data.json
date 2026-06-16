@@ -1,0 +1,23 @@
+{
+  "country": "United Kingdom",
+  "country_code": "GB",
+  "language": "English",
+  "language_code": "en",
+  "script": "Latin",
+  "currency": "GBP",
+  "timezones": ["Europe/London"],
+  "given_names": {
+    "male": ["Oliver", "George", "Harry", "Jack", "Charlie", "Thomas", "Jacob", "James", "William", "Henry", "Alfie", "Leo", "Oscar", "Arthur", "Noah", "Edward", "Daniel", "Samuel"],
+    "female": ["Olivia", "Amelia", "Isla", "Ava", "Emily", "Sophia", "Grace", "Lily", "Freya", "Charlotte", "Florence", "Poppy", "Evie", "Sophie", "Alice", "Phoebe", "Imogen", "Eleanor"],
+    "unisex": ["Charlie", "Alex", "Frankie", "Jordan", "Robin", "Sam", "Ash", "Rowan"]
+  },
+  "surnames": ["Smith", "Jones", "Taylor", "Brown", "Williams", "Wilson", "Johnson", "Davies", "Robinson", "Wright", "Thompson", "Evans", "Walker", "White", "Roberts", "Green", "Hall", "Wood", "Jackson", "Clarke", "Patel", "Khan", "Lewis", "Hughes"],
+  "cities": ["London", "Birmingham", "Manchester", "Glasgow", "Liverpool", "Leeds", "Sheffield", "Edinburgh", "Bristol", "Cardiff", "Newcastle", "Nottingham", "Belfast", "Brighton"],
+  "regions": ["England", "Scotland", "Wales", "Northern Ireland", "Greater London", "West Midlands", "Greater Manchester", "Merseyside", "Yorkshire"],
+  "street_suffixes": ["Street", "Road", "Lane", "Avenue", "Close", "Way", "Drive", "Gardens", "Crescent"],
+  "street_names": ["High", "Church", "Station", "Victoria", "Green", "Park", "Queen", "King", "Mill", "School", "George", "Albert"],
+  "address_format": "{number} {street} {suffix}",
+  "postal_format": "??# #??",
+  "phone_format": "07### ######",
+  "email_domains": ["gmail.com", "outlook.com", "yahoo.co.uk", "hotmail.co.uk", "btinternet.com"]
+}
