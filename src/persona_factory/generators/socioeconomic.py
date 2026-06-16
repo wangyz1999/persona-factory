@@ -36,6 +36,30 @@ _EDUCATION_WEIGHTS = {
     EducationLevel.DOCTORATE: 0.02,
     EducationLevel.PROFESSIONAL: 0.03,
 }
+# Minimum plausible age to have *attained* each education level. Levels not
+# listed (none/primary/secondary/high_school) have no meaningful adult floor.
+# Used to clamp an independently-sampled education down to what age allows, so
+# the factory never emits e.g. an 18-year-old with a master's degree.
+_EDUCATION_MIN_AGE = {
+    EducationLevel.SOME_COLLEGE: 18,
+    EducationLevel.VOCATIONAL: 18,
+    EducationLevel.ASSOCIATE: 20,
+    EducationLevel.BACHELOR: 21,
+    EducationLevel.MASTER: 23,
+    EducationLevel.DOCTORATE: 26,
+    EducationLevel.PROFESSIONAL: 26,
+}
+# Fallback ladder (descending) used to find the highest level an age permits.
+_EDUCATION_DESC = [
+    EducationLevel.PROFESSIONAL,
+    EducationLevel.DOCTORATE,
+    EducationLevel.MASTER,
+    EducationLevel.BACHELOR,
+    EducationLevel.ASSOCIATE,
+    EducationLevel.SOME_COLLEGE,
+    EducationLevel.VOCATIONAL,
+    EducationLevel.HIGH_SCHOOL,
+]
 _SENIORITY_BY_EXPERIENCE = [
     (0, Seniority.INTERN),
     (1, Seniority.ENTRY),
@@ -80,6 +104,10 @@ class SocioeconomicGenerator(Generator):
             list(_EDUCATION_WEIGHTS.values()),
         )
         education = as_enum(education, EducationLevel)
+        # Clamp education down to what the persona's age plausibly allows, unless
+        # the level was explicitly pinned by the caller.
+        if is_fixed(config, "socioeconomic.education_level") is None:
+            education = _clamp_education_to_age(education, age)
 
         employment_fixed = is_fixed(config, "socioeconomic.employment_status")
         employment = (
@@ -130,6 +158,20 @@ class SocioeconomicGenerator(Generator):
             socio.income_band = _income_for_education(rng, education)
 
         persona.socioeconomic = socio
+
+
+def _clamp_education_to_age(education: EducationLevel, age: int) -> EducationLevel:
+    """Lower ``education`` to the highest level ``age`` plausibly permits.
+
+    Returns ``education`` unchanged when the age already clears its floor.
+    """
+    floor = _EDUCATION_MIN_AGE.get(education)
+    if floor is None or age >= floor:
+        return education
+    for level in _EDUCATION_DESC:
+        if age >= _EDUCATION_MIN_AGE.get(level, 0):
+            return level
+    return EducationLevel.HIGH_SCHOOL
 
 
 def _seniority_for(years: int) -> Seniority:
