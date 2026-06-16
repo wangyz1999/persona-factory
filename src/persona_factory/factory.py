@@ -13,6 +13,7 @@ There is intentionally no general correlation engine; only these explicit links.
 
 from __future__ import annotations
 
+import random
 from typing import Any
 
 import persona_factory.generators  # noqa: F401  (registers built-in generators)
@@ -93,6 +94,14 @@ class PersonaFactory:
         """
         config = self._config_with_overrides(overrides)
         effective_seed = seed if seed is not None else config.seed
+        if effective_seed is None:
+            # No seed requested: draw a concrete one from system entropy so each
+            # call truly randomizes. We must materialize it (rather than pass
+            # ``None`` straight through) because ``RNG.derive`` keys child streams
+            # off the parent seed -- a ``None`` parent yields a fixed "None:domain"
+            # label and therefore the *same* persona every run. Recording the
+            # drawn seed in ``meta`` keeps the result reproducible after the fact.
+            effective_seed = random.SystemRandom().getrandbits(64)
         rng = RNG(effective_seed)
         locale_data = load_locale(config.locale, "data.json")
 

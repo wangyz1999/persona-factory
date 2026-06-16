@@ -23,6 +23,15 @@ def test_pool_reproducible() -> None:
     assert a.to_jsonl() == b.to_jsonl()
 
 
+def test_unseeded_pool_randomizes() -> None:
+    # Regression: a passthrough ``None`` pool seed derived per-persona seeds by
+    # label, so consecutive unseeded pools were byte-identical.
+    a = PersonaFactory("en_US").generate_pool(8)
+    b = PersonaFactory("en_US").generate_pool(8)
+    assert a.to_jsonl() != b.to_jsonl()
+    assert a.meta["seed"] is not None
+
+
 def test_distribution_allocation_exact() -> None:
     pool = PersonaFactory("en_US", seed=2).generate_pool(
         100, distributions={"gender": {"female": 0.5, "male": 0.5}}

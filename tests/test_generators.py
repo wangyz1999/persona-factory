@@ -163,6 +163,24 @@ def test_full_persona_reproducible() -> None:
     assert a.to_json() == b.to_json()
 
 
+def test_unseeded_generate_randomizes() -> None:
+    # No seed -> each call should draw fresh entropy. Regression: ``derive``
+    # keys child streams off the parent seed, so a passthrough ``None`` seed
+    # produced the *same* persona every time.
+    f = PersonaFactory("en_US")
+    names = {f.generate(include=["identity"]).identity.full_name for _ in range(8)}
+    assert len(names) > 1
+
+
+def test_unseeded_generate_records_concrete_seed() -> None:
+    # The drawn seed lands in meta so a "random" persona stays reproducible.
+    p = PersonaFactory("en_US").generate(include=["identity"])
+    recorded = p.meta["seed"]
+    assert recorded is not None
+    again = PersonaFactory("en_US").generate(seed=recorded, include=["identity"])
+    assert again.identity.full_name == p.identity.full_name
+
+
 def test_narrative_bio_mentions_name() -> None:
     p = PersonaFactory("en_US", seed=1).generate(given_name="Ada", include=list(ALL_DOMAINS))
     assert "Ada" in p.narrative.bio

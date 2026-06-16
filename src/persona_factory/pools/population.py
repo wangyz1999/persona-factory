@@ -15,6 +15,7 @@ than relying on sampling noise.
 from __future__ import annotations
 
 import json
+import random
 from collections.abc import Iterator
 from typing import TYPE_CHECKING, Any
 
@@ -168,6 +169,12 @@ def generate_pool(
     if n < 0:
         raise ValueError("n must be non-negative")
     pool_seed = seed if seed is not None else factory.config.seed
+    if pool_seed is None:
+        # No seed requested: draw a concrete one so the pool truly randomizes.
+        # Per-persona seeds derive from ``pool_seed`` by label, so a ``None``
+        # pool seed would otherwise yield the same pool every run (see the
+        # matching note in ``PersonaFactory.generate``). Recorded in ``meta``.
+        pool_seed = random.SystemRandom().getrandbits(64)
     rng = RNG(pool_seed).derive("pool")
 
     distributions = dict(distributions or {})
