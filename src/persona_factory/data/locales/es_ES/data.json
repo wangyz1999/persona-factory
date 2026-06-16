@@ -5,19 +5,207 @@
   "language_code": "es",
   "script": "Latin",
   "currency": "EUR",
-  "timezones": ["Europe/Madrid"],
   "given_names": {
-    "male": ["Antonio", "Manuel", "José", "Francisco", "David", "Juan", "Javier", "Daniel", "Carlos", "Jesús", "Alejandro", "Miguel", "Pablo", "Sergio", "Pedro", "Ángel", "Adrián", "Diego", "Hugo", "Álvaro"],
-    "female": ["María", "Carmen", "Ana", "Isabel", "Laura", "Lucía", "Marta", "Cristina", "Paula", "Sara", "Elena", "Sofía", "Andrea", "Carla", "Claudia", "Alba", "Julia", "Daniela", "Marina", "Noa"],
-    "unisex": ["Trinidad", "Reyes", "Cruz", "Guadalupe"]
+    "male": [
+      "Antonio",
+      "Manuel",
+      "José",
+      "Francisco",
+      "David",
+      "Juan",
+      "Javier",
+      "Daniel",
+      "Carlos",
+      "Jesús",
+      "Alejandro",
+      "Miguel",
+      "Pablo",
+      "Sergio",
+      "Pedro",
+      "Ángel",
+      "Adrián",
+      "Diego",
+      "Hugo",
+      "Álvaro"
+    ],
+    "female": [
+      "María",
+      "Carmen",
+      "Ana",
+      "Isabel",
+      "Laura",
+      "Lucía",
+      "Marta",
+      "Cristina",
+      "Paula",
+      "Sara",
+      "Elena",
+      "Sofía",
+      "Andrea",
+      "Carla",
+      "Claudia",
+      "Alba",
+      "Julia",
+      "Daniela",
+      "Marina",
+      "Noa"
+    ],
+    "unisex": [
+      "Trinidad",
+      "Reyes",
+      "Cruz",
+      "Guadalupe"
+    ]
   },
-  "surnames": ["García", "Rodríguez", "González", "Fernández", "López", "Martínez", "Sánchez", "Pérez", "Gómez", "Martín", "Jiménez", "Ruiz", "Hernández", "Díaz", "Moreno", "Álvarez", "Romero", "Alonso", "Gutiérrez", "Navarro"],
-  "cities": ["Madrid", "Barcelona", "Valencia", "Sevilla", "Zaragoza", "Málaga", "Murcia", "Palma", "Bilbao", "Alicante", "Córdoba", "Granada", "Valladolid", "Vigo"],
-  "regions": ["Madrid", "Cataluña", "Andalucía", "Comunidad Valenciana", "Galicia", "Castilla y León", "País Vasco", "Canarias", "Aragón"],
-  "street_suffixes": ["Calle", "Avenida", "Plaza", "Paseo", "Camino"],
-  "street_names": ["Mayor", "Real", "Nueva", "del Sol", "de la Iglesia", "Gran Vía", "de España", "del Carmen", "San Juan", "de la Constitución"],
+  "surnames": [
+    "García",
+    "Rodríguez",
+    "González",
+    "Fernández",
+    "López",
+    "Martínez",
+    "Sánchez",
+    "Pérez",
+    "Gómez",
+    "Martín",
+    "Jiménez",
+    "Ruiz",
+    "Hernández",
+    "Díaz",
+    "Moreno",
+    "Álvarez",
+    "Romero",
+    "Alonso",
+    "Gutiérrez",
+    "Navarro"
+  ],
+  "places": [
+    {
+      "city": "Madrid",
+      "region": "Community of Madrid",
+      "timezone": "Europe/Madrid",
+      "lat": 40.4168,
+      "lon": -3.7038
+    },
+    {
+      "city": "Barcelona",
+      "region": "Catalonia",
+      "timezone": "Europe/Madrid",
+      "lat": 41.3851,
+      "lon": 2.1734
+    },
+    {
+      "city": "Valencia",
+      "region": "Valencian Community",
+      "timezone": "Europe/Madrid",
+      "lat": 39.4699,
+      "lon": -0.3763
+    },
+    {
+      "city": "Sevilla",
+      "region": "Andalusia",
+      "timezone": "Europe/Madrid",
+      "lat": 37.3891,
+      "lon": -5.9845
+    },
+    {
+      "city": "Zaragoza",
+      "region": "Aragon",
+      "timezone": "Europe/Madrid",
+      "lat": 41.6488,
+      "lon": -0.8891
+    },
+    {
+      "city": "Málaga",
+      "region": "Andalusia",
+      "timezone": "Europe/Madrid",
+      "lat": 36.7213,
+      "lon": -4.4214
+    },
+    {
+      "city": "Murcia",
+      "region": "Region of Murcia",
+      "timezone": "Europe/Madrid",
+      "lat": 37.9922,
+      "lon": -1.1307
+    },
+    {
+      "city": "Palma",
+      "region": "Balearic Islands",
+      "timezone": "Europe/Madrid",
+      "lat": 39.5696,
+      "lon": 2.6502
+    },
+    {
+      "city": "Bilbao",
+      "region": "Basque Country",
+      "timezone": "Europe/Madrid",
+      "lat": 43.263,
+      "lon": -2.935
+    },
+    {
+      "city": "Alicante",
+      "region": "Valencian Community",
+      "timezone": "Europe/Madrid",
+      "lat": 38.3452,
+      "lon": -0.481
+    },
+    {
+      "city": "Córdoba",
+      "region": "Andalusia",
+      "timezone": "Europe/Madrid",
+      "lat": 37.8882,
+      "lon": -4.7794
+    },
+    {
+      "city": "Granada",
+      "region": "Andalusia",
+      "timezone": "Europe/Madrid",
+      "lat": 37.1773,
+      "lon": -3.5986
+    },
+    {
+      "city": "Valladolid",
+      "region": "Castile and León",
+      "timezone": "Europe/Madrid",
+      "lat": 41.6523,
+      "lon": -4.7245
+    },
+    {
+      "city": "Vigo",
+      "region": "Galicia",
+      "timezone": "Europe/Madrid",
+      "lat": 42.2406,
+      "lon": -8.7207
+    }
+  ],
+  "street_suffixes": [
+    "Calle",
+    "Avenida",
+    "Plaza",
+    "Paseo",
+    "Camino"
+  ],
+  "street_names": [
+    "Mayor",
+    "Real",
+    "Nueva",
+    "del Sol",
+    "de la Iglesia",
+    "Gran Vía",
+    "de España",
+    "del Carmen",
+    "San Juan",
+    "de la Constitución"
+  ],
   "address_format": "{suffix} {street}, {number}",
   "postal_format": "#####",
   "phone_format": "6## ## ## ##",
-  "email_domains": ["gmail.com", "hotmail.es", "outlook.es", "yahoo.es", "telefonica.net"]
+  "email_domains": [
+    "gmail.com",
+    "hotmail.es",
+    "outlook.es",
+    "yahoo.es",
+    "telefonica.net"
+  ]
 }

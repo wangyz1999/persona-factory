@@ -30,9 +30,10 @@ if TYPE_CHECKING:
     from persona_factory.models.persona import Persona
     from persona_factory.rng import RNG
 
-# Reference "today" for age<->DOB math. Fixed so personas are reproducible and
-# do not silently drift as the wall clock advances (the RNG ban on Date.now()
-# applies in spirit here too).
+# Default reference "today" for age<->DOB math. Fixed so personas are
+# reproducible and do not silently drift as the wall clock advances (the RNG ban
+# on Date.now() applies in spirit here too). Callers can override it per-config
+# via ``PersonaConfig.reference_year`` to keep ages current.
 _REFERENCE_YEAR = 2025
 
 _GENDER_WEIGHTS = {
@@ -124,7 +125,8 @@ class IdentityGenerator(Generator):
         # -- age -> DOB -> generation ------------------------------------
         age = int(pick_number(rng, config, "identity.age", 18, 80, integer=True, mu=38, sigma=16))
         identity.age = age
-        birth_year = _REFERENCE_YEAR - age
+        reference_year = getattr(config, "reference_year", _REFERENCE_YEAR)
+        birth_year = reference_year - age
         month = rng.randint(1, 12)
         # keep day valid for every month
         day = rng.randint(1, 28)

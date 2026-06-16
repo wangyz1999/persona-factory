@@ -5,19 +5,207 @@
   "language_code": "nb",
   "script": "Latin",
   "currency": "NOK",
-  "timezones": ["Europe/Oslo"],
   "given_names": {
-    "male": ["Jakob", "Emil", "Noah", "Oliver", "William", "Lucas", "Filip", "Aksel", "Oskar", "Magnus", "Henrik", "Mathias", "Jonas", "Sander", "Elias", "Ole", "Lars", "Erik", "Bjørn", "Anders"],
-    "female": ["Nora", "Emma", "Sara", "Sofie", "Olivia", "Ella", "Maja", "Emilie", "Ingrid", "Leah", "Frida", "Selma", "Anna", "Thea", "Linnea", "Kari", "Astrid", "Solveig", "Ida", "Marte"],
-    "unisex": ["Kim", "Robin", "Alex", "Stevie"]
+    "male": [
+      "Jakob",
+      "Emil",
+      "Noah",
+      "Oliver",
+      "William",
+      "Lucas",
+      "Filip",
+      "Aksel",
+      "Oskar",
+      "Magnus",
+      "Henrik",
+      "Mathias",
+      "Jonas",
+      "Sander",
+      "Elias",
+      "Ole",
+      "Lars",
+      "Erik",
+      "Bjørn",
+      "Anders"
+    ],
+    "female": [
+      "Nora",
+      "Emma",
+      "Sara",
+      "Sofie",
+      "Olivia",
+      "Ella",
+      "Maja",
+      "Emilie",
+      "Ingrid",
+      "Leah",
+      "Frida",
+      "Selma",
+      "Anna",
+      "Thea",
+      "Linnea",
+      "Kari",
+      "Astrid",
+      "Solveig",
+      "Ida",
+      "Marte"
+    ],
+    "unisex": [
+      "Kim",
+      "Robin",
+      "Alex",
+      "Stevie"
+    ]
   },
-  "surnames": ["Hansen", "Johansen", "Olsen", "Larsen", "Andersen", "Pedersen", "Nilsen", "Kristiansen", "Jensen", "Karlsen", "Johnsen", "Pettersen", "Eriksen", "Berg", "Haugen", "Hagen", "Johannessen", "Andreassen", "Jacobsen", "Dahl"],
-  "cities": ["Oslo", "Bergen", "Trondheim", "Stavanger", "Drammen", "Fredrikstad", "Kristiansand", "Sandnes", "Tromsø", "Sarpsborg", "Bodø", "Ålesund", "Tønsberg", "Moss"],
-  "regions": ["Oslo", "Vestland", "Rogaland", "Trøndelag", "Viken", "Innlandet", "Vestfold og Telemark", "Agder", "Møre og Romsdal", "Troms og Finnmark"],
-  "street_suffixes": ["gate", "veien", "gata", "plass", "allé"],
-  "street_names": ["Stor", "Kirke", "Skole", "Park", "Strand", "Berg", "Nedre", "Øvre", "Sjø", "Bjørke"],
+  "surnames": [
+    "Hansen",
+    "Johansen",
+    "Olsen",
+    "Larsen",
+    "Andersen",
+    "Pedersen",
+    "Nilsen",
+    "Kristiansen",
+    "Jensen",
+    "Karlsen",
+    "Johnsen",
+    "Pettersen",
+    "Eriksen",
+    "Berg",
+    "Haugen",
+    "Hagen",
+    "Johannessen",
+    "Andreassen",
+    "Jacobsen",
+    "Dahl"
+  ],
+  "places": [
+    {
+      "city": "Oslo",
+      "region": "Oslo",
+      "timezone": "Europe/Oslo",
+      "lat": 59.9139,
+      "lon": 10.7522
+    },
+    {
+      "city": "Bergen",
+      "region": "Vestland",
+      "timezone": "Europe/Oslo",
+      "lat": 60.3913,
+      "lon": 5.3221
+    },
+    {
+      "city": "Trondheim",
+      "region": "Trøndelag",
+      "timezone": "Europe/Oslo",
+      "lat": 63.4305,
+      "lon": 10.3951
+    },
+    {
+      "city": "Stavanger",
+      "region": "Rogaland",
+      "timezone": "Europe/Oslo",
+      "lat": 58.97,
+      "lon": 5.7331
+    },
+    {
+      "city": "Drammen",
+      "region": "Buskerud",
+      "timezone": "Europe/Oslo",
+      "lat": 59.744,
+      "lon": 10.2045
+    },
+    {
+      "city": "Fredrikstad",
+      "region": "Østfold",
+      "timezone": "Europe/Oslo",
+      "lat": 59.2181,
+      "lon": 10.9298
+    },
+    {
+      "city": "Kristiansand",
+      "region": "Agder",
+      "timezone": "Europe/Oslo",
+      "lat": 58.1599,
+      "lon": 8.0182
+    },
+    {
+      "city": "Sandnes",
+      "region": "Rogaland",
+      "timezone": "Europe/Oslo",
+      "lat": 58.8517,
+      "lon": 5.7361
+    },
+    {
+      "city": "Tromsø",
+      "region": "Troms",
+      "timezone": "Europe/Oslo",
+      "lat": 69.6492,
+      "lon": 18.9553
+    },
+    {
+      "city": "Sarpsborg",
+      "region": "Østfold",
+      "timezone": "Europe/Oslo",
+      "lat": 59.2839,
+      "lon": 11.1097
+    },
+    {
+      "city": "Bodø",
+      "region": "Nordland",
+      "timezone": "Europe/Oslo",
+      "lat": 67.2804,
+      "lon": 14.4049
+    },
+    {
+      "city": "Ålesund",
+      "region": "Møre og Romsdal",
+      "timezone": "Europe/Oslo",
+      "lat": 62.4722,
+      "lon": 6.1495
+    },
+    {
+      "city": "Tønsberg",
+      "region": "Vestfold",
+      "timezone": "Europe/Oslo",
+      "lat": 59.2674,
+      "lon": 10.4076
+    },
+    {
+      "city": "Moss",
+      "region": "Østfold",
+      "timezone": "Europe/Oslo",
+      "lat": 59.4344,
+      "lon": 10.6578
+    }
+  ],
+  "street_suffixes": [
+    "gate",
+    "veien",
+    "gata",
+    "plass",
+    "allé"
+  ],
+  "street_names": [
+    "Stor",
+    "Kirke",
+    "Skole",
+    "Park",
+    "Strand",
+    "Berg",
+    "Nedre",
+    "Øvre",
+    "Sjø",
+    "Bjørke"
+  ],
   "address_format": "{street}{suffix} {number}",
   "postal_format": "####",
   "phone_format": "### ## ###",
-  "email_domains": ["gmail.com", "online.no", "outlook.com", "hotmail.no", "icloud.com"]
+  "email_domains": [
+    "gmail.com",
+    "online.no",
+    "outlook.com",
+    "hotmail.no",
+    "icloud.com"
+  ]
 }

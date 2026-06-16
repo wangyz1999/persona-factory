@@ -12,6 +12,21 @@ from persona_factory.generators.identity import generation_for_year
 from persona_factory.models.enums import Gender, PronounSet
 
 
+def test_reference_year_overridable() -> None:
+    from persona_factory.config import PersonaConfig
+
+    cfg = PersonaConfig(locale="en_US", reference_year=2026)
+    p = PersonaFactory(config=cfg).generate(seed=1, age=26, include=["identity"])
+    assert p.identity.date_of_birth.year == 2026 - 26
+    assert p.meta["reference_year"] == 2026
+
+
+def test_reference_year_defaults_stable() -> None:
+    p = PersonaFactory("en_US", seed=1).generate(age=26, include=["identity"])
+    assert p.identity.date_of_birth.year == 2025 - 26  # default reference year
+    assert p.meta["reference_year"] == 2025
+
+
 def test_generates_complete_identity(factory: PersonaFactory) -> None:
     p = factory.generate()
     ident = p.identity

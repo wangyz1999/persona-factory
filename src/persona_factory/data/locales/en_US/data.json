@@ -5,19 +5,257 @@
   "language_code": "en",
   "script": "Latin",
   "currency": "USD",
-  "timezones": ["America/New_York", "America/Chicago", "America/Denver", "America/Los_Angeles", "America/Phoenix"],
   "given_names": {
-    "male": ["James", "Michael", "Robert", "John", "David", "William", "Richard", "Joseph", "Thomas", "Christopher", "Daniel", "Matthew", "Anthony", "Mark", "Andrew", "Joshua", "Ethan", "Noah", "Liam", "Mason", "Logan", "Jacob", "Benjamin", "Elijah", "Lucas"],
-    "female": ["Mary", "Patricia", "Jennifer", "Linda", "Elizabeth", "Barbara", "Susan", "Jessica", "Sarah", "Karen", "Emily", "Emma", "Olivia", "Ava", "Sophia", "Isabella", "Mia", "Charlotte", "Amelia", "Harper", "Grace", "Chloe", "Victoria", "Madison", "Abigail"],
-    "unisex": ["Taylor", "Jordan", "Alex", "Morgan", "Casey", "Riley", "Avery", "Quinn", "Cameron", "Skyler", "Jamie", "Reese"]
+    "male": [
+      "James",
+      "Michael",
+      "Robert",
+      "John",
+      "David",
+      "William",
+      "Richard",
+      "Joseph",
+      "Thomas",
+      "Christopher",
+      "Daniel",
+      "Matthew",
+      "Anthony",
+      "Mark",
+      "Andrew",
+      "Joshua",
+      "Ethan",
+      "Noah",
+      "Liam",
+      "Mason",
+      "Logan",
+      "Jacob",
+      "Benjamin",
+      "Elijah",
+      "Lucas"
+    ],
+    "female": [
+      "Mary",
+      "Patricia",
+      "Jennifer",
+      "Linda",
+      "Elizabeth",
+      "Barbara",
+      "Susan",
+      "Jessica",
+      "Sarah",
+      "Karen",
+      "Emily",
+      "Emma",
+      "Olivia",
+      "Ava",
+      "Sophia",
+      "Isabella",
+      "Mia",
+      "Charlotte",
+      "Amelia",
+      "Harper",
+      "Grace",
+      "Chloe",
+      "Victoria",
+      "Madison",
+      "Abigail"
+    ],
+    "unisex": [
+      "Taylor",
+      "Jordan",
+      "Alex",
+      "Morgan",
+      "Casey",
+      "Riley",
+      "Avery",
+      "Quinn",
+      "Cameron",
+      "Skyler",
+      "Jamie",
+      "Reese"
+    ]
   },
-  "surnames": ["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Rodriguez", "Martinez", "Hernandez", "Lopez", "Gonzalez", "Wilson", "Anderson", "Thomas", "Taylor", "Moore", "Jackson", "Martin", "Lee", "Perez", "Thompson", "White", "Harris", "Clark", "Lewis", "Robinson", "Walker", "Young"],
-  "cities": ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego", "Dallas", "Austin", "Seattle", "Denver", "Boston", "Portland", "Nashville", "Atlanta"],
-  "regions": ["California", "Texas", "Florida", "New York", "Pennsylvania", "Illinois", "Ohio", "Georgia", "Washington", "Massachusetts", "Colorado", "Oregon", "Tennessee", "Arizona"],
-  "street_suffixes": ["St", "Ave", "Blvd", "Dr", "Ln", "Rd", "Way", "Ct", "Pl"],
-  "street_names": ["Main", "Oak", "Pine", "Maple", "Cedar", "Elm", "Washington", "Lake", "Hill", "Park", "Sunset", "River", "Highland", "Franklin"],
+  "surnames": [
+    "Smith",
+    "Johnson",
+    "Williams",
+    "Brown",
+    "Jones",
+    "Garcia",
+    "Miller",
+    "Davis",
+    "Rodriguez",
+    "Martinez",
+    "Hernandez",
+    "Lopez",
+    "Gonzalez",
+    "Wilson",
+    "Anderson",
+    "Thomas",
+    "Taylor",
+    "Moore",
+    "Jackson",
+    "Martin",
+    "Lee",
+    "Perez",
+    "Thompson",
+    "White",
+    "Harris",
+    "Clark",
+    "Lewis",
+    "Robinson",
+    "Walker",
+    "Young"
+  ],
+  "places": [
+    {
+      "city": "New York",
+      "region": "New York",
+      "timezone": "America/New_York",
+      "lat": 40.7128,
+      "lon": -74.006
+    },
+    {
+      "city": "Los Angeles",
+      "region": "California",
+      "timezone": "America/Los_Angeles",
+      "lat": 34.0522,
+      "lon": -118.2437
+    },
+    {
+      "city": "Chicago",
+      "region": "Illinois",
+      "timezone": "America/Chicago",
+      "lat": 41.8781,
+      "lon": -87.6298
+    },
+    {
+      "city": "Houston",
+      "region": "Texas",
+      "timezone": "America/Chicago",
+      "lat": 29.7604,
+      "lon": -95.3698
+    },
+    {
+      "city": "Phoenix",
+      "region": "Arizona",
+      "timezone": "America/Phoenix",
+      "lat": 33.4484,
+      "lon": -112.074
+    },
+    {
+      "city": "Philadelphia",
+      "region": "Pennsylvania",
+      "timezone": "America/New_York",
+      "lat": 39.9526,
+      "lon": -75.1652
+    },
+    {
+      "city": "San Antonio",
+      "region": "Texas",
+      "timezone": "America/Chicago",
+      "lat": 29.4241,
+      "lon": -98.4936
+    },
+    {
+      "city": "San Diego",
+      "region": "California",
+      "timezone": "America/Los_Angeles",
+      "lat": 32.7157,
+      "lon": -117.1611
+    },
+    {
+      "city": "Dallas",
+      "region": "Texas",
+      "timezone": "America/Chicago",
+      "lat": 32.7767,
+      "lon": -96.797
+    },
+    {
+      "city": "Austin",
+      "region": "Texas",
+      "timezone": "America/Chicago",
+      "lat": 30.2672,
+      "lon": -97.7431
+    },
+    {
+      "city": "Seattle",
+      "region": "Washington",
+      "timezone": "America/Los_Angeles",
+      "lat": 47.6062,
+      "lon": -122.3321
+    },
+    {
+      "city": "Denver",
+      "region": "Colorado",
+      "timezone": "America/Denver",
+      "lat": 39.7392,
+      "lon": -104.9903
+    },
+    {
+      "city": "Boston",
+      "region": "Massachusetts",
+      "timezone": "America/New_York",
+      "lat": 42.3601,
+      "lon": -71.0589
+    },
+    {
+      "city": "Portland",
+      "region": "Oregon",
+      "timezone": "America/Los_Angeles",
+      "lat": 45.5152,
+      "lon": -122.6784
+    },
+    {
+      "city": "Nashville",
+      "region": "Tennessee",
+      "timezone": "America/Chicago",
+      "lat": 36.1627,
+      "lon": -86.7816
+    },
+    {
+      "city": "Atlanta",
+      "region": "Georgia",
+      "timezone": "America/New_York",
+      "lat": 33.749,
+      "lon": -84.388
+    }
+  ],
+  "street_suffixes": [
+    "St",
+    "Ave",
+    "Blvd",
+    "Dr",
+    "Ln",
+    "Rd",
+    "Way",
+    "Ct",
+    "Pl"
+  ],
+  "street_names": [
+    "Main",
+    "Oak",
+    "Pine",
+    "Maple",
+    "Cedar",
+    "Elm",
+    "Washington",
+    "Lake",
+    "Hill",
+    "Park",
+    "Sunset",
+    "River",
+    "Highland",
+    "Franklin"
+  ],
   "address_format": "{number} {street} {suffix}",
   "postal_format": "#####",
   "phone_format": "(###) ###-####",
-  "email_domains": ["gmail.com", "yahoo.com", "outlook.com", "hotmail.com", "icloud.com"]
+  "email_domains": [
+    "gmail.com",
+    "yahoo.com",
+    "outlook.com",
+    "hotmail.com",
+    "icloud.com"
+  ]
 }

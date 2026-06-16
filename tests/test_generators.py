@@ -73,6 +73,71 @@ def test_location_postal_matches_mask_length() -> None:
     assert p.location.postal_code.isdigit()
 
 
+def test_location_is_geographically_coherent() -> None:
+    # city, region, timezone and coordinates must all come from one place, so a
+    # city always maps to its real region/timezone and coords land in-locale.
+    from persona_factory.data import load_locale
+
+    places = {p["city"]: p for p in load_locale("en_GB", "data.json")["places"]}
+    for seed in range(25):
+        loc = PersonaFactory("en_GB", seed=seed).generate(include=["location"]).location
+        place = places[loc.city]
+        assert loc.region == place["region"]
+        assert loc.timezone == place["timezone"]
+        # jittered but still within ~6km of the city centre
+        assert abs(loc.latitude - place["lat"]) <= 0.06
+        assert abs(loc.longitude - place["lon"]) <= 0.06
+
+
+def test_location_city_override_pulls_matching_region() -> None:
+    p = PersonaFactory("en_GB", seed=1).generate(**{"location.city": "Bristol"})
+    assert p.location.city == "Bristol"
+    assert p.location.region == "South West England"  # not "Yorkshire"
+
+
+def test_education_not_above_age() -> None:
+    f = PersonaFactory("en_US")
+    for seed in range(40):
+        p = f.generate(seed=seed, age=18, include=["identity", "socioeconomic"])
+        assert p.socioeconomic.education_level not in {"master", "doctorate", "professional"}
+
+
+def test_education_override_survives_age_clamp() -> None:
+    p = PersonaFactory("en_US", seed=1).generate(
+        age=18, education_level="master", include=["identity", "socioeconomic"]
+    )
+    assert p.socioeconomic.education_level == "master"
+
+
+def test_body_type_coheres_with_bmi() -> None:
+    f = PersonaFactory("en_US")
+    for seed in range(60):
+        ph = f.generate(seed=seed, gender="male", include=["identity", "physical"]).physical
+        bmi = ph.weight_kg / ((ph.height_cm / 100) ** 2)
+        if bmi < 20:
+            assert ph.body_type not in {"heavyset", "curvy"}
+        if bmi > 32:
+            assert ph.body_type != "slim"
+
+
+def test_ip_uses_documentation_range() -> None:
+    for seed in range(20):
+        p = PersonaFactory("en_US", seed=seed).generate(include=["identity", "contact"])
+        assert p.contact.ip_address.startswith(("192.0.2.", "198.51.100.", "203.0.113."))
+
+
+def test_iban_marked_synthetic_with_invalid_checkdigits() -> None:
+    p = PersonaFactory("en_US", seed=1).generate(include=["documents"])
+    # check digits (chars 3-4) are "00", invalid in real IBANs (02-98)
+    assert p.documents.iban[2:4] == "00"
+
+
+def test_non_latin_handle_reflects_romanized_name() -> None:
+    for locale in ["zh_CN", "ja_JP", "ar_SA", "hi_IN", "ru_RU"]:
+        p = PersonaFactory(locale, seed=1).generate(include=["identity", "contact"])
+        assert not p.contact.username.startswith("user"), locale
+
+
 def test_documents_card_passes_luhn() -> None:
     p = PersonaFactory("en_US", seed=1).generate(include=["documents"])
     digits = [int(c) for c in p.documents.credit_card if c.isdigit()][::-1]
