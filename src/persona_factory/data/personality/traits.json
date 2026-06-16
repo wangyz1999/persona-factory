@@ -1,0 +1,12 @@
+{
+  "positive": ["curious", "patient", "ambitious", "compassionate", "witty", "disciplined", "creative", "loyal", "adventurous", "analytical", "easygoing", "generous", "resilient", "diplomatic", "meticulous", "optimistic", "pragmatic", "spontaneous", "thoughtful", "charismatic", "humble", "decisive", "empathetic", "independent"],
+  "negative": ["stubborn", "impatient", "anxious", "cynical", "aloof", "impulsive", "perfectionistic", "indecisive", "blunt", "guarded", "restless", "forgetful", "competitive", "sarcastic", "moody", "scatterbrained", "overcautious", "argumentative", "self-critical", "easily distracted"],
+  "high_openness": ["imaginative", "intellectually curious", "unconventional"],
+  "high_conscientiousness": ["organized", "reliable", "goal-oriented"],
+  "high_extraversion": ["outgoing", "energetic", "talkative"],
+  "low_extraversion": ["reserved", "introspective", "soft-spoken"],
+  "high_agreeableness": ["warm", "cooperative", "trusting"],
+  "low_agreeableness": ["competitive", "skeptical", "direct"],
+  "high_neuroticism": ["sensitive", "easily stressed", "self-doubting"],
+  "low_neuroticism": ["calm", "even-tempered", "unflappable"]
+}

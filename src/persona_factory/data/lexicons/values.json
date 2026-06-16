@@ -1,0 +1,7 @@
+{
+  "schwartz_values": ["self-direction", "stimulation", "hedonism", "achievement", "power", "security", "conformity", "tradition", "benevolence", "universalism"],
+  "moral_foundations": ["care/harm", "fairness/cheating", "loyalty/betrayal", "authority/subversion", "sanctity/degradation", "liberty/oppression"],
+  "character_strengths": ["creativity", "curiosity", "judgment", "love of learning", "perspective", "bravery", "perseverance", "honesty", "zest", "love", "kindness", "social intelligence", "teamwork", "fairness", "leadership", "forgiveness", "humility", "prudence", "self-regulation", "appreciation of beauty", "gratitude", "hope", "humor", "spirituality"],
+  "core_values": ["family", "freedom", "honesty", "loyalty", "ambition", "compassion", "independence", "justice", "creativity", "tradition", "adventure", "stability", "knowledge", "community", "self-respect", "generosity", "discipline", "authenticity"],
+  "worldviews": ["pragmatic realist", "hopeful idealist", "cautious traditionalist", "progressive humanist", "spiritual seeker", "skeptical empiricist", "community-minded collectivist", "individualist"]
+}

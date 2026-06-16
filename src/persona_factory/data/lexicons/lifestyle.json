@@ -1,0 +1,14 @@
+{
+  "hobbies": ["reading", "hiking", "cooking", "gaming", "photography", "painting", "gardening", "running", "yoga", "cycling", "knitting", "woodworking", "fishing", "rock climbing", "playing guitar", "chess", "baking", "pottery", "birdwatching", "dancing", "swimming", "traveling", "board games", "calligraphy", "astronomy", "volunteering", "collecting vinyl", "martial arts", "surfing", "journaling"],
+  "interests": ["technology", "politics", "sports", "fashion", "science", "history", "philosophy", "film", "music", "food", "travel", "fitness", "sustainability", "finance", "art", "psychology", "space exploration", "true crime", "architecture", "wildlife"],
+  "skills": ["public speaking", "project management", "graphic design", "data analysis", "creative writing", "negotiation", "coding", "carpentry", "cooking", "foreign languages", "leadership", "budgeting", "teaching", "research", "video editing", "networking", "problem solving", "time management"],
+  "media": ["sci-fi novels", "true crime podcasts", "indie films", "classic rock", "K-pop", "anime", "documentaries", "reality TV", "jazz", "hip-hop", "fantasy series", "history podcasts", "stand-up comedy", "art-house cinema", "video essays"],
+  "brands_affinity": ["budget-conscious", "brand-loyal", "early adopter", "minimalist", "luxury-oriented", "eco-conscious", "value-seeker", "trend-follower"],
+  "allergies": ["peanuts", "shellfish", "gluten", "dairy", "pollen", "dust", "pet dander", "soy", "eggs", "penicillin"],
+  "distinguishing_features": ["freckles", "a scar on the left eyebrow", "a sleeve tattoo", "dimples", "a nose piercing", "heterochromia", "a birthmark on the neck", "a gap-toothed smile", "wears round glasses", "a closely-cropped beard"],
+  "voices": ["warm and measured", "quick and animated", "deep and gravelly", "soft and breathy", "crisp and articulate", "raspy", "melodic", "monotone but precise"],
+  "eye_colors": ["brown", "hazel", "blue", "green", "gray", "amber", "dark brown"],
+  "hair_colors": ["black", "dark brown", "brown", "auburn", "blonde", "red", "gray", "silver"],
+  "hair_styles": ["short and tidy", "shoulder-length", "long and wavy", "buzz cut", "curly", "braided", "ponytail", "bun", "shaved", "afro", "bob", "undercut"],
+  "skin_tones": ["fair", "light", "medium", "olive", "tan", "brown", "dark brown", "deep"]
+}

@@ -13,7 +13,7 @@ This generator owns the *intra-identity* key-links described in PLAN.md §3.3:
 from __future__ import annotations
 
 import datetime as _dt
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 from persona_factory.generators._helpers import is_fixed, pick, pick_number
 from persona_factory.generators.base import Generator, register
@@ -82,7 +82,7 @@ class IdentityGenerator(Generator):
         rng: RNG,
         config: PersonaConfig,
         persona: Persona,
-        locale_data: dict,
+        locale_data: dict[str, Any],
     ) -> None:
         identity = persona.identity
 

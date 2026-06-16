@@ -1,0 +1,6 @@
+{
+  "catchphrases": ["Honestly?", "At the end of the day...", "Let me think about that.", "No worries!", "To be fair...", "Here's the thing.", "Long story short...", "I mean, right?", "Make it make sense.", "That tracks.", "Couldn't agree more.", "Fair enough."],
+  "typing_quirks": ["uses lots of ellipses...", "never uses capital letters", "double-texts often", "ends messages with 'haha'", "uses full punctuation always", "abbreviates everything", "sends voice notes instead", "uses em-dashes constantly", "types in long paragraphs", "adds (lol) parenthetically"],
+  "accents": ["neutral", "Southern drawl", "New York", "British RP", "Scottish", "Australian", "Midwestern", "regional"],
+  "dialects": ["standard", "colloquial", "regional slang-heavy", "code-switching", "formal register"]
+}

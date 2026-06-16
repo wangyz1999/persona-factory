@@ -9,12 +9,19 @@ dotted path and apply ``fixed`` / ``choices`` / range constraints transparently.
 from __future__ import annotations
 
 from collections.abc import Sequence
+from enum import Enum
 from typing import Any, TypeVar
 
 from persona_factory.config import PersonaConfig
 from persona_factory.rng import RNG
 
 T = TypeVar("T")
+E = TypeVar("E", bound=Enum)
+
+
+def as_enum(value: Any, enum_cls: type[E]) -> E:
+    """Coerce ``value`` to ``enum_cls`` if it is a raw value (idempotent)."""
+    return value if isinstance(value, enum_cls) else enum_cls(value)
 
 
 def pick(

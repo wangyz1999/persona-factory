@@ -1,0 +1,13 @@
+{
+  "types": {
+    "1": {"name": "The Reformer", "wings": ["9", "2"], "description": "Principled, purposeful, self-controlled, perfectionistic."},
+    "2": {"name": "The Helper", "wings": ["1", "3"], "description": "Generous, demonstrative, people-pleasing, possessive."},
+    "3": {"name": "The Achiever", "wings": ["2", "4"], "description": "Adaptive, excelling, driven, image-conscious."},
+    "4": {"name": "The Individualist", "wings": ["3", "5"], "description": "Expressive, dramatic, self-absorbed, temperamental."},
+    "5": {"name": "The Investigator", "wings": ["4", "6"], "description": "Perceptive, innovative, secretive, isolated."},
+    "6": {"name": "The Loyalist", "wings": ["5", "7"], "description": "Engaging, responsible, anxious, suspicious."},
+    "7": {"name": "The Enthusiast", "wings": ["6", "8"], "description": "Spontaneous, versatile, acquisitive, scattered."},
+    "8": {"name": "The Challenger", "wings": ["7", "9"], "description": "Self-confident, decisive, willful, confrontational."},
+    "9": {"name": "The Peacemaker", "wings": ["8", "1"], "description": "Receptive, reassuring, complacent, resigned."}
+  }
+}

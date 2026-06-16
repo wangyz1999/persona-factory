@@ -1,0 +1,21 @@
+{
+  "types": ["INTJ", "INTP", "ENTJ", "ENTP", "INFJ", "INFP", "ENFJ", "ENFP", "ISTJ", "ISFJ", "ESTJ", "ESFJ", "ISTP", "ISFP", "ESTP", "ESFP"],
+  "descriptions": {
+    "INTJ": "Strategic, independent, and visionary planner.",
+    "INTP": "Curious, analytical, and theory-driven thinker.",
+    "ENTJ": "Decisive, organized, and natural leader.",
+    "ENTP": "Inventive, argumentative, and idea-generating.",
+    "INFJ": "Insightful, principled, and quietly idealistic.",
+    "INFP": "Empathetic, imaginative, and value-driven.",
+    "ENFJ": "Warm, persuasive, and people-focused.",
+    "ENFP": "Enthusiastic, spontaneous, and people-loving.",
+    "ISTJ": "Dependable, practical, and detail-oriented.",
+    "ISFJ": "Loyal, considerate, and service-minded.",
+    "ESTJ": "Efficient, traditional, and take-charge.",
+    "ESFJ": "Sociable, supportive, and conscientious.",
+    "ISTP": "Pragmatic, hands-on, and adaptable.",
+    "ISFP": "Gentle, aesthetic, and present-focused.",
+    "ESTP": "Energetic, bold, and action-oriented.",
+    "ESFP": "Playful, outgoing, and spontaneous."
+  }
+}

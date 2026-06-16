@@ -1,0 +1,17 @@
+{
+  "industries": {
+    "Technology": ["Software Engineer", "Data Scientist", "Product Manager", "DevOps Engineer", "UX Designer", "IT Support Specialist", "Systems Administrator", "Machine Learning Engineer", "QA Engineer", "Technical Writer"],
+    "Healthcare": ["Registered Nurse", "Physician", "Surgeon", "Pharmacist", "Physical Therapist", "Dentist", "Paramedic", "Medical Assistant", "Radiologist", "Psychologist"],
+    "Education": ["Teacher", "Professor", "School Counselor", "Librarian", "Teaching Assistant", "Principal", "Tutor", "Curriculum Developer"],
+    "Finance": ["Accountant", "Financial Analyst", "Investment Banker", "Auditor", "Actuary", "Loan Officer", "Financial Advisor", "Bookkeeper"],
+    "Legal": ["Lawyer", "Paralegal", "Judge", "Legal Secretary", "Compliance Officer"],
+    "Trades": ["Electrician", "Plumber", "Carpenter", "Welder", "Mechanic", "HVAC Technician", "Mason", "Machinist"],
+    "Service": ["Chef", "Server", "Barista", "Retail Associate", "Hairdresser", "Customer Service Representative", "Bartender", "Housekeeper"],
+    "Creative": ["Graphic Designer", "Writer", "Photographer", "Musician", "Actor", "Illustrator", "Video Editor", "Art Director"],
+    "Business": ["Marketing Manager", "Sales Representative", "Human Resources Manager", "Operations Manager", "Business Analyst", "Consultant", "Executive Assistant", "Project Manager"],
+    "Public Sector": ["Police Officer", "Firefighter", "Social Worker", "Postal Worker", "Civil Engineer", "Urban Planner", "Park Ranger"],
+    "Transportation": ["Truck Driver", "Pilot", "Flight Attendant", "Delivery Driver", "Logistics Coordinator", "Train Operator"],
+    "Agriculture": ["Farmer", "Agricultural Technician", "Veterinarian", "Forester", "Fisher"]
+  },
+  "fields_of_study": ["Computer Science", "Business Administration", "Psychology", "Biology", "Mechanical Engineering", "Economics", "English Literature", "Nursing", "Education", "Political Science", "Communications", "Mathematics", "Sociology", "Chemistry", "Law", "Medicine", "Fine Arts", "History", "Marketing", "Civil Engineering"]
+}

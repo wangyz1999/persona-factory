@@ -10,7 +10,7 @@ generator, not here.
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 from persona_factory.models.enums import (
     EmploymentStatus,
@@ -57,7 +57,7 @@ def apply_cross_domain_links(
     persona: Persona,
     rng: RNG,
     config: PersonaConfig,
-    locale_data: dict,
+    locale_data: dict[str, Any],
 ) -> None:
     """Apply every cross-domain resolver in a fixed, deterministic order."""
     _link_currency(persona, locale_data)
@@ -66,7 +66,7 @@ def apply_cross_domain_links(
     _link_age_to_relationships(persona, config, rng)
 
 
-def _link_currency(persona: Persona, locale_data: dict) -> None:
+def _link_currency(persona: Persona, locale_data: dict[str, Any]) -> None:
     """A persona's income currency follows their locale."""
     if persona.socioeconomic and not persona.socioeconomic.currency:
         persona.socioeconomic.currency = locale_data.get("currency")
@@ -80,9 +80,9 @@ def _link_employment_to_age(persona: Persona, config: PersonaConfig) -> None:
         return
     if _is_configured(config, "socioeconomic.employment_status"):
         return
-    if age >= 67 and socio.employment_status not in {EmploymentStatus.RETIRED}:
+    if age >= 67:
         socio.employment_status = EmploymentStatus.RETIRED
-    elif age <= 22 and socio.employment_status is None:
+    elif age <= 21:
         socio.employment_status = EmploymentStatus.STUDENT
 
 

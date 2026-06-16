@@ -6,7 +6,21 @@ the factory only needs ``import persona_factory.generators``.
 
 from __future__ import annotations
 
-from persona_factory.generators import identity  # noqa: F401
+from persona_factory.generators import (  # noqa: F401
+    beliefs,
+    communication,
+    contact,
+    documents,
+    identity,
+    lifestyle,
+    location,
+    narrative,
+    personality,
+    physical,
+    social,
+    socioeconomic,
+    values,
+)
 from persona_factory.generators.base import (
     Generator,
     get_registry,

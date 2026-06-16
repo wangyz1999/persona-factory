@@ -13,7 +13,7 @@ the supplied :class:`~persona_factory.rng.RNG`, never the global ``random``.
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 if TYPE_CHECKING:
     from persona_factory.config import PersonaConfig
@@ -40,7 +40,7 @@ class Generator(ABC):
         rng: RNG,
         config: PersonaConfig,
         persona: Persona,
-        locale_data: dict,
+        locale_data: dict[str, Any],
     ) -> None:
         """Populate ``persona.<domain>`` in place using ``rng`` and ``config``."""
         raise NotImplementedError
