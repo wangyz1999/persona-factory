@@ -1,4 +1,7 @@
-# persona-factory
+# Persona Factory
+
+<img width="1774" height="887" alt="92bc8d33-1978-46bb-b3bf-6f3623e0b686" src="https://github.com/user-attachments/assets/00fe95cf-f062-436b-9641-e7478400e640" />
+
 
 > Generate richly-attributed, coherent fake personas — and pools of them — for
 > LLM agent roleplay, simulated users, and social simulation.
