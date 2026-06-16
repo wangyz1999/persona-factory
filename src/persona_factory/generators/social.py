@@ -102,15 +102,11 @@ class SocialGenerator(Generator):
             MaritalStatus.WIDOWED,
             MaritalStatus.DOMESTIC_PARTNERSHIP,
         }:
-            social.children = rng.weighted_choice(
-                [0, 1, 2, 3, 4], [0.25, 0.3, 0.28, 0.12, 0.05]
-            )
+            social.children = rng.weighted_choice([0, 1, 2, 3, 4], [0.25, 0.3, 0.28, 0.12, 0.05])
         else:
             social.children = 0 if age < 22 else rng.weighted_choice([0, 1], [0.8, 0.2])
 
         persona.social = social
-
-
 
 
 register(SocialGenerator())

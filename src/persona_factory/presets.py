@@ -52,9 +52,7 @@ _PRESETS = {
         ],
         attributes={
             "identity.age": AttributeSpec(min_value=22, max_value=65),
-            "socioeconomic.employment_status": AttributeSpec(
-                fixed="employed_full_time"
-            ),
+            "socioeconomic.employment_status": AttributeSpec(fixed="employed_full_time"),
             "communication.formality": AttributeSpec(
                 choices=["formal", "neutral"], weights=[0.5, 0.5]
             ),

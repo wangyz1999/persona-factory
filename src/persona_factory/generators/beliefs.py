@@ -90,6 +90,4 @@ class BeliefsGenerator(Generator):
         persona.beliefs = beliefs
 
 
-
-
 register(BeliefsGenerator())

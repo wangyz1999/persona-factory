@@ -25,6 +25,4 @@ def to_json(persona: Persona, *, exclude_none: bool = True, indent: int | None =
 
 def to_jsonl(personas: Iterable[Persona], *, exclude_none: bool = True) -> str:
     """Render an iterable of personas as newline-delimited JSON."""
-    return "\n".join(
-        p.model_dump_json(exclude_none=exclude_none, indent=None) for p in personas
-    )
+    return "\n".join(p.model_dump_json(exclude_none=exclude_none, indent=None) for p in personas)

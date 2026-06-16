@@ -87,9 +87,7 @@ class RNG:
     def shuffle(self, seq: list[T]) -> None:
         self._random.shuffle(seq)
 
-    def weighted_choice(
-        self, choices: Sequence[T], weights: Sequence[float] | None = None
-    ) -> T:
+    def weighted_choice(self, choices: Sequence[T], weights: Sequence[float] | None = None) -> T:
         """Pick one element, optionally weighted. Falls back to uniform."""
         if not choices:
             raise IndexError("cannot choose from an empty sequence")
@@ -128,9 +126,7 @@ class RNG:
         """Return ``True`` with the given probability in ``[0, 1]``."""
         return self._random.random() < probability
 
-    def bounded_gauss(
-        self, mu: float, sigma: float, low: float, high: float
-    ) -> float:
+    def bounded_gauss(self, mu: float, sigma: float, low: float, high: float) -> float:
         """A Gaussian clamped to ``[low, high]`` (re-rolls a few times first)."""
         for _ in range(8):
             value = self._random.gauss(mu, sigma)

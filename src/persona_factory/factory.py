@@ -141,9 +141,7 @@ class PersonaFactory:
                 continue
             if key == "age_range":
                 low, high = value
-                attributes["identity.age"] = AttributeSpec(
-                    min_value=low, max_value=high
-                )
+                attributes["identity.age"] = AttributeSpec(min_value=low, max_value=high)
                 continue
             path = _OVERRIDE_ALIASES.get(key, key)
             if "." not in path:

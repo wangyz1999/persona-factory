@@ -101,15 +101,9 @@ class IdentityGenerator(Generator):
         elif gender in _FEM:
             pool = names.get("female", []) + names.get("unisex", [])
         else:
-            pool = (
-                names.get("male", [])
-                + names.get("female", [])
-                + names.get("unisex", [])
-            )
+            pool = names.get("male", []) + names.get("female", []) + names.get("unisex", [])
         identity.given_name = pick(rng, config, "identity.given_name", pool)
-        identity.family_name = pick(
-            rng, config, "identity.family_name", locale_data["surnames"]
-        )
+        identity.family_name = pick(rng, config, "identity.family_name", locale_data["surnames"])
         # ~30% of personas get a middle name (same gendered pool).
         if rng.chance(0.3):
             identity.middle_name = rng.choice(pool)

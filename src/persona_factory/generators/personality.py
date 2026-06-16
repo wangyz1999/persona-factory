@@ -65,9 +65,7 @@ class PersonalityGenerator(Generator):
         personality.enneagram_wing = f"{enn.value}w{rng.choice(wings)}"
 
         # -- DISC + temperament -----------------------------------------
-        personality.disc = as_enum(
-            pick(rng, config, "personality.disc", list(DISCType)), DISCType
-        )
+        personality.disc = as_enum(pick(rng, config, "personality.disc", list(DISCType)), DISCType)
         personality.temperament = as_enum(
             pick(rng, config, "personality.temperament", list(Temperament)),
             Temperament,
@@ -127,8 +125,6 @@ def _derive_traits(rng: RNG, b: BigFive, data: dict[str, Any]) -> list[str]:
         if t not in seen:
             seen.append(t)
     return seen[:5]
-
-
 
 
 register(PersonalityGenerator())

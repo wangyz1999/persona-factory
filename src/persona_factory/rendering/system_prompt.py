@@ -96,9 +96,7 @@ def _build_lines(persona: Persona) -> list[str]:
         if beliefs.religion and str(beliefs.religion) != "none":
             bbits.append(f"religion: {str(beliefs.religion).replace('_', ' ')}")
         if beliefs.political_orientation:
-            bbits.append(
-                f"politics: {str(beliefs.political_orientation).replace('_', ' ')}"
-            )
+            bbits.append(f"politics: {str(beliefs.political_orientation).replace('_', ' ')}")
         if beliefs.worldview:
             bbits.append(f"worldview: {beliefs.worldview}")
         if bbits:

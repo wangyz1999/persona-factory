@@ -80,9 +80,7 @@ def test_generation_boundaries() -> None:
 def test_name_drawn_from_locale_pool(locale: str) -> None:
     data = load_locale(locale, "data.json")
     p = PersonaFactory(locale, seed=5).generate(gender="male")
-    valid_given = set(
-        data["given_names"]["male"] + data["given_names"].get("unisex", [])
-    )
+    valid_given = set(data["given_names"]["male"] + data["given_names"].get("unisex", []))
     assert p.identity.given_name in valid_given
     assert p.identity.family_name in set(data["surnames"])
 

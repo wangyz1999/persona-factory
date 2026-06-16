@@ -87,9 +87,7 @@ def test_to_dataframe_flattens_to_dotted_columns() -> None:
 def test_locale_weights_drive_pool_locales() -> None:
     from persona_factory.config import PersonaConfig
 
-    cfg = PersonaConfig(
-        locale="en_US", locale_weights={"en_US": 0.5, "ja_JP": 0.5}, seed=1
-    )
+    cfg = PersonaConfig(locale="en_US", locale_weights={"en_US": 0.5, "ja_JP": 0.5}, seed=1)
     pool = PersonaFactory(config=cfg).generate_pool(100)
     locales = pool.counts("identity.locale")
     assert locales.get("en_US") == 50

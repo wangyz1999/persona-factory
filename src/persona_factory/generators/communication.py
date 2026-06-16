@@ -51,9 +51,7 @@ class CommunicationGenerator(Generator):
                 pick(rng, config, "communication.vocabulary_level", list(VocabularyLevel)),
                 VocabularyLevel,
             ),
-            humor=as_enum(
-                pick(rng, config, "communication.humor", list(HumorStyle)), HumorStyle
-            ),
+            humor=as_enum(pick(rng, config, "communication.humor", list(HumorStyle)), HumorStyle),
             emoji_usage=as_enum(
                 pick(rng, config, "communication.emoji_usage", list(EmojiUsage)),
                 EmojiUsage,
@@ -71,9 +69,7 @@ class CommunicationGenerator(Generator):
             )
         persona.communication = comm
 
-    def _tone(
-        self, rng: RNG, config: PersonaConfig, big_five: BigFive | None
-    ) -> Tone:
+    def _tone(self, rng: RNG, config: PersonaConfig, big_five: BigFive | None) -> Tone:
         if is_fixed(config, "communication.tone") is not None or big_five is None:
             return as_enum(pick(rng, config, "communication.tone", list(Tone)), Tone)
         if big_five.extraversion >= 0.65:
@@ -84,37 +80,23 @@ class CommunicationGenerator(Generator):
             return rng.choice([Tone.WARM, Tone.EMPATHETIC, Tone.FRIENDLY])
         return as_enum(pick(rng, config, "communication.tone", list(Tone)), Tone)
 
-    def _formality(
-        self, rng: RNG, config: PersonaConfig, big_five: BigFive | None
-    ) -> Formality:
+    def _formality(self, rng: RNG, config: PersonaConfig, big_five: BigFive | None) -> Formality:
         if is_fixed(config, "communication.formality") is not None or big_five is None:
-            return as_enum(
-                pick(rng, config, "communication.formality", list(Formality)), Formality
-            )
+            return as_enum(pick(rng, config, "communication.formality", list(Formality)), Formality)
         if big_five.conscientiousness >= 0.65:
             return rng.choice([Formality.FORMAL, Formality.NEUTRAL])
         if big_five.conscientiousness <= 0.35:
             return rng.choice([Formality.CASUAL, Formality.VERY_CASUAL])
-        return as_enum(
-            pick(rng, config, "communication.formality", list(Formality)), Formality
-        )
+        return as_enum(pick(rng, config, "communication.formality", list(Formality)), Formality)
 
-    def _verbosity(
-        self, rng: RNG, config: PersonaConfig, big_five: BigFive | None
-    ) -> Verbosity:
+    def _verbosity(self, rng: RNG, config: PersonaConfig, big_five: BigFive | None) -> Verbosity:
         if is_fixed(config, "communication.verbosity") is not None or big_five is None:
-            return as_enum(
-                pick(rng, config, "communication.verbosity", list(Verbosity)), Verbosity
-            )
+            return as_enum(pick(rng, config, "communication.verbosity", list(Verbosity)), Verbosity)
         if big_five.extraversion >= 0.65:
             return rng.choice([Verbosity.VERBOSE, Verbosity.BALANCED, Verbosity.RAMBLING])
         if big_five.extraversion <= 0.35:
             return rng.choice([Verbosity.TERSE, Verbosity.CONCISE])
-        return as_enum(
-            pick(rng, config, "communication.verbosity", list(Verbosity)), Verbosity
-        )
-
-
+        return as_enum(pick(rng, config, "communication.verbosity", list(Verbosity)), Verbosity)
 
 
 register(CommunicationGenerator())

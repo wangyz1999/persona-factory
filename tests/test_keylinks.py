@@ -13,24 +13,18 @@ def test_high_income_occupation_clamped_up() -> None:
 
 
 def test_student_age_sets_employment_and_low_income() -> None:
-    p = PersonaFactory("en_US", seed=2).generate(
-        age=19, include=["identity", "socioeconomic"]
-    )
+    p = PersonaFactory("en_US", seed=2).generate(age=19, include=["identity", "socioeconomic"])
     assert p.socioeconomic.employment_status == "student"
     assert p.socioeconomic.income_band in {"very_low", "low", "lower_middle"}
 
 
 def test_retirement_age() -> None:
-    p = PersonaFactory("en_US", seed=2).generate(
-        age=70, include=["identity", "socioeconomic"]
-    )
+    p = PersonaFactory("en_US", seed=2).generate(age=70, include=["identity", "socioeconomic"])
     assert p.socioeconomic.employment_status == "retired"
 
 
 def test_minor_is_single_no_children() -> None:
-    p = PersonaFactory("en_US", seed=3).generate(
-        age=15, include=["identity", "social"]
-    )
+    p = PersonaFactory("en_US", seed=3).generate(age=15, include=["identity", "social"])
     assert p.social.marital_status == "single"
     assert p.social.children == 0
 

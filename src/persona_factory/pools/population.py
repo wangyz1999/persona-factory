@@ -126,9 +126,7 @@ def _allocate_counts(n: int, proportions: dict[Any, float]) -> dict[Any, int]:
     counts = {k: int(v) for k, v in raw.items()}
     remainder = n - sum(counts.values())
     # distribute the remaining slots to the largest fractional parts
-    fractions = sorted(
-        raw.items(), key=lambda kv: (kv[1] - int(kv[1])), reverse=True
-    )
+    fractions = sorted(raw.items(), key=lambda kv: kv[1] - int(kv[1]), reverse=True)
     for i in range(remainder):
         counts[fractions[i % len(fractions)][0]] += 1
     return counts

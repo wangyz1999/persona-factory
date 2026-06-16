@@ -27,9 +27,7 @@ class ValuesGenerator(Generator):
     ) -> None:
         lex = load_json("lexicons", "values.json")
         persona.values = Values(
-            core_values=pick_sample(
-                rng, config, "values.core_values", lex["core_values"], k=3
-            ),
+            core_values=pick_sample(rng, config, "values.core_values", lex["core_values"], k=3),
             moral_foundations=pick_sample(
                 rng, config, "values.moral_foundations", lex["moral_foundations"], k=2
             ),

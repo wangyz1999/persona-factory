@@ -43,9 +43,7 @@ def test_personality_mbti_derived_from_ocean() -> None:
 
 
 def test_mbti_override_pins_value() -> None:
-    p = PersonaFactory("en_US", seed=1).generate(
-        mbti="INTJ", include=["personality"]
-    )
+    p = PersonaFactory("en_US", seed=1).generate(mbti="INTJ", include=["personality"])
     assert p.personality.mbti == "INTJ"
 
 
@@ -64,9 +62,7 @@ def test_contact_handles_non_latin_names() -> None:
 
 
 def test_beliefs_religiosity_only_when_religious() -> None:
-    p = PersonaFactory("en_US", seed=1).generate(
-        religion="atheist", include=["beliefs"]
-    )
+    p = PersonaFactory("en_US", seed=1).generate(religion="atheist", include=["beliefs"])
     assert p.beliefs.religiosity is None
 
 
@@ -103,7 +99,5 @@ def test_full_persona_reproducible() -> None:
 
 
 def test_narrative_bio_mentions_name() -> None:
-    p = PersonaFactory("en_US", seed=1).generate(
-        given_name="Ada", include=list(ALL_DOMAINS)
-    )
+    p = PersonaFactory("en_US", seed=1).generate(given_name="Ada", include=list(ALL_DOMAINS))
     assert "Ada" in p.narrative.bio

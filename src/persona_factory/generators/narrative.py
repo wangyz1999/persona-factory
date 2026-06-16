@@ -36,24 +36,18 @@ class NarrativeGenerator(Generator):
         narrative = Narrative(
             goals=pick_sample(rng, config, "narrative.goals", lex["goals"], k=2),
             fears=pick_sample(rng, config, "narrative.fears", lex["fears"], k=2),
-            motivations=pick_sample(
-                rng, config, "narrative.motivations", lex["motivations"], k=2
-            ),
+            motivations=pick_sample(rng, config, "narrative.motivations", lex["motivations"], k=2),
             pet_peeves=pick_sample(
                 rng, config, "narrative.pet_peeves", lex["pet_peeves"], k=rng.randint(1, 2)
             ),
-            quirks=pick_sample(
-                rng, config, "narrative.quirks", lex["quirks"], k=rng.randint(1, 2)
-            ),
+            quirks=pick_sample(rng, config, "narrative.quirks", lex["quirks"], k=rng.randint(1, 2)),
         )
         if rng.chance(0.5):
             narrative.life_events = pick_sample(
                 rng, config, "narrative.life_events", lex["life_events"], k=1
             )
         if rng.chance(0.3):
-            narrative.secrets = pick_sample(
-                rng, config, "narrative.secrets", lex["secrets"], k=1
-            )
+            narrative.secrets = pick_sample(rng, config, "narrative.secrets", lex["secrets"], k=1)
         narrative.bio = _template_bio(persona)
         persona.narrative = narrative
 

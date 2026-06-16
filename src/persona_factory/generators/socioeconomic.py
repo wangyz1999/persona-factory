@@ -118,18 +118,14 @@ class SocioeconomicGenerator(Generator):
         # -- experience + seniority (bounded by age) --------------------
         max_exp = max(0, age - 18)
         years = int(
-            pick_number(
-                rng, config, "socioeconomic.years_experience", 0, max_exp, integer=True
-            )
+            pick_number(rng, config, "socioeconomic.years_experience", 0, max_exp, integer=True)
         )
         socio.years_experience = years
         socio.seniority = _seniority_for(years)
 
         # -- income band (provisional; keylinks may clamp) --------------
         if is_fixed(config, "socioeconomic.income_band") is not None:
-            socio.income_band = as_enum(
-                is_fixed(config, "socioeconomic.income_band"), IncomeBand
-            )
+            socio.income_band = as_enum(is_fixed(config, "socioeconomic.income_band"), IncomeBand)
         else:
             socio.income_band = _income_for_education(rng, education)
 
@@ -164,8 +160,6 @@ def _income_for_education(rng: RNG, education: EducationLevel) -> IncomeBand:
         [IncomeBand.LOW, IncomeBand.LOWER_MIDDLE, IncomeBand.MIDDLE],
         [0.3, 0.4, 0.3],
     )
-
-
 
 
 register(SocioeconomicGenerator())

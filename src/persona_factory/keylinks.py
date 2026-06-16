@@ -116,9 +116,7 @@ def _link_occupation_to_income(persona: Persona, config: PersonaConfig) -> None:
             socio.income_band = IncomeBand.HIGH
 
 
-def _link_age_to_relationships(
-    persona: Persona, config: PersonaConfig, rng: RNG
-) -> None:
+def _link_age_to_relationships(persona: Persona, config: PersonaConfig, rng: RNG) -> None:
     """Minors and very young adults should not be married/have many children."""
     social = persona.social
     age = persona.identity.age

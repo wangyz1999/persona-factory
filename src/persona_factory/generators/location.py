@@ -48,9 +48,7 @@ class LocationGenerator(Generator):
         street = pick(rng, config, "location.street", locale_data["street_names"])
         suffix = rng.choice(locale_data["street_suffixes"])
         number = rng.randint(1, 9999)
-        address = locale_data["address_format"].format(
-            number=number, street=street, suffix=suffix
-        )
+        address = locale_data["address_format"].format(number=number, street=street, suffix=suffix)
 
         location = Location(
             street_address=address,
@@ -74,8 +72,6 @@ class LocationGenerator(Generator):
             longitude=round(rng.uniform(-180, 180), 5),
         )
         persona.location = location
-
-
 
 
 register(LocationGenerator())

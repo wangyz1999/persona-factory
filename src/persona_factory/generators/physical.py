@@ -67,19 +67,13 @@ class PhysicalGenerator(Generator):
         else:
             h_mu, h_sd, w_mu, w_sd = _NEUTRAL_STATS
 
-        height = pick_number(
-            rng, config, "physical.height_cm", 140, 210, mu=h_mu, sigma=h_sd
-        )
-        weight = pick_number(
-            rng, config, "physical.weight_kg", 40, 160, mu=w_mu, sigma=w_sd
-        )
+        height = pick_number(rng, config, "physical.height_cm", 140, 210, mu=h_mu, sigma=h_sd)
+        weight = pick_number(rng, config, "physical.weight_kg", 40, 160, mu=w_mu, sigma=w_sd)
 
         physical = Physical(
             height_cm=round(height, 1),
             weight_kg=round(weight, 1),
-            body_type=as_enum(
-                pick(rng, config, "physical.body_type", list(BodyType)), BodyType
-            ),
+            body_type=as_enum(pick(rng, config, "physical.body_type", list(BodyType)), BodyType),
             eye_color=pick(rng, config, "physical.eye_color", lex["eye_colors"]),
             hair_color=pick(rng, config, "physical.hair_color", lex["hair_colors"]),
             hair_style=pick(rng, config, "physical.hair_style", lex["hair_styles"]),
@@ -116,8 +110,6 @@ class PhysicalGenerator(Generator):
                 k=rng.randint(1, 2),
             )
         persona.physical = physical
-
-
 
 
 register(PhysicalGenerator())

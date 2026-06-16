@@ -52,12 +52,8 @@ class LifestyleGenerator(Generator):
             interests=pick_sample(
                 rng, config, "lifestyle.interests", lex["interests"], k=rng.randint(2, 4)
             ),
-            skills=pick_sample(
-                rng, config, "lifestyle.skills", lex["skills"], k=rng.randint(2, 3)
-            ),
-            favorite_media=pick_sample(
-                rng, config, "lifestyle.favorite_media", lex["media"], k=2
-            ),
+            skills=pick_sample(rng, config, "lifestyle.skills", lex["skills"], k=rng.randint(2, 3)),
+            favorite_media=pick_sample(rng, config, "lifestyle.favorite_media", lex["media"], k=2),
             diet=as_enum(
                 pick(
                     rng,
@@ -73,15 +69,11 @@ class LifestyleGenerator(Generator):
                 FitnessLevel,
             ),
             smoking=as_enum(
-                pick(
-                    rng, config, "lifestyle.smoking", list(SubstanceUse), _SUBSTANCE_WEIGHTS
-                ),
+                pick(rng, config, "lifestyle.smoking", list(SubstanceUse), _SUBSTANCE_WEIGHTS),
                 SubstanceUse,
             ),
             alcohol=as_enum(
-                pick(
-                    rng, config, "lifestyle.alcohol", list(SubstanceUse), _SUBSTANCE_WEIGHTS
-                ),
+                pick(rng, config, "lifestyle.alcohol", list(SubstanceUse), _SUBSTANCE_WEIGHTS),
                 SubstanceUse,
             ),
             chronotype=as_enum(
@@ -99,8 +91,6 @@ class LifestyleGenerator(Generator):
                 rng, config, "lifestyle.allergies", lex["allergies"], k=rng.randint(1, 2)
             )
         persona.lifestyle = lifestyle
-
-
 
 
 register(LifestyleGenerator())
