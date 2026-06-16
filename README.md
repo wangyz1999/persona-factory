@@ -84,14 +84,14 @@ and occupation → income band all hang together.
 - Locale: en_GB   Script: Latin
 
 ## Physical
-- Height: 182.3 cm   Weight: 74.6 kg   Body type: curvy
+- Height: 182.3 cm   Weight: 80.1 kg   Body type: average
 - Eye color: amber   Hair: black, ponytail   Skin tone: tan
 - Handedness: right   Blood type: O+   Voice: melodic
 - Distinguishing features: a closely-cropped beard, heterochromia
 
 ## Location
-- 484 Victoria Drive, Bristol, Yorkshire, United Kingdom (GB)
-- Postal code: CX0 6YW   Timezone: Europe/London   Settlement: suburban
+- 484 Victoria Drive, Bristol, South West England, United Kingdom (GB)
+- Postal code: NY6 7MX   Timezone: Europe/London   Settlement: urban
 
 ## Work & Education
 - Occupation: Tutor (Education), junior, 4 yrs   Employment: full-time

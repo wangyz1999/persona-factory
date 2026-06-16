@@ -5,19 +5,208 @@
   "language_code": "de",
   "script": "Latin",
   "currency": "EUR",
-  "timezones": ["Europe/Berlin"],
   "given_names": {
-    "male": ["Maximilian", "Alexander", "Paul", "Leon", "Lukas", "Felix", "Jonas", "Noah", "Elias", "Ben", "Finn", "Luis", "Henry", "Emil", "Anton", "Hans", "Peter", "Thomas", "Michael", "Andreas"],
-    "female": ["Marie", "Sophie", "Maria", "Emma", "Mia", "Hannah", "Emilia", "Lena", "Lea", "Anna", "Laura", "Lina", "Clara", "Johanna", "Ida", "Ursula", "Sabine", "Petra", "Julia", "Katharina"],
-    "unisex": ["Kim", "Toni", "Sascha", "Alex", "Mika"]
+    "male": [
+      "Maximilian",
+      "Alexander",
+      "Paul",
+      "Leon",
+      "Lukas",
+      "Felix",
+      "Jonas",
+      "Noah",
+      "Elias",
+      "Ben",
+      "Finn",
+      "Luis",
+      "Henry",
+      "Emil",
+      "Anton",
+      "Hans",
+      "Peter",
+      "Thomas",
+      "Michael",
+      "Andreas"
+    ],
+    "female": [
+      "Marie",
+      "Sophie",
+      "Maria",
+      "Emma",
+      "Mia",
+      "Hannah",
+      "Emilia",
+      "Lena",
+      "Lea",
+      "Anna",
+      "Laura",
+      "Lina",
+      "Clara",
+      "Johanna",
+      "Ida",
+      "Ursula",
+      "Sabine",
+      "Petra",
+      "Julia",
+      "Katharina"
+    ],
+    "unisex": [
+      "Kim",
+      "Toni",
+      "Sascha",
+      "Alex",
+      "Mika"
+    ]
   },
-  "surnames": ["Müller", "Schmidt", "Schneider", "Fischer", "Weber", "Meyer", "Wagner", "Becker", "Schulz", "Hoffmann", "Schäfer", "Koch", "Bauer", "Richter", "Klein", "Wolf", "Schröder", "Neumann", "Schwarz", "Zimmermann"],
-  "cities": ["Berlin", "Hamburg", "München", "Köln", "Frankfurt", "Stuttgart", "Düsseldorf", "Leipzig", "Dortmund", "Essen", "Bremen", "Dresden", "Hannover", "Nürnberg"],
-  "regions": ["Bayern", "Baden-Württemberg", "Nordrhein-Westfalen", "Hessen", "Niedersachsen", "Sachsen", "Berlin", "Hamburg", "Rheinland-Pfalz"],
-  "street_suffixes": ["straße", "weg", "allee", "platz", "gasse"],
-  "street_names": ["Haupt", "Bahnhof", "Garten", "Schul", "Kirch", "Berg", "Wald", "Linden", "Schiller", "Goethe"],
+  "surnames": [
+    "Müller",
+    "Schmidt",
+    "Schneider",
+    "Fischer",
+    "Weber",
+    "Meyer",
+    "Wagner",
+    "Becker",
+    "Schulz",
+    "Hoffmann",
+    "Schäfer",
+    "Koch",
+    "Bauer",
+    "Richter",
+    "Klein",
+    "Wolf",
+    "Schröder",
+    "Neumann",
+    "Schwarz",
+    "Zimmermann"
+  ],
+  "places": [
+    {
+      "city": "Berlin",
+      "region": "Berlin",
+      "timezone": "Europe/Berlin",
+      "lat": 52.52,
+      "lon": 13.405
+    },
+    {
+      "city": "Hamburg",
+      "region": "Hamburg",
+      "timezone": "Europe/Berlin",
+      "lat": 53.5511,
+      "lon": 9.9937
+    },
+    {
+      "city": "München",
+      "region": "Bavaria",
+      "timezone": "Europe/Berlin",
+      "lat": 48.1351,
+      "lon": 11.582
+    },
+    {
+      "city": "Köln",
+      "region": "North Rhine-Westphalia",
+      "timezone": "Europe/Berlin",
+      "lat": 50.9375,
+      "lon": 6.9603
+    },
+    {
+      "city": "Frankfurt",
+      "region": "Hesse",
+      "timezone": "Europe/Berlin",
+      "lat": 50.1109,
+      "lon": 8.6821
+    },
+    {
+      "city": "Stuttgart",
+      "region": "Baden-Württemberg",
+      "timezone": "Europe/Berlin",
+      "lat": 48.7758,
+      "lon": 9.1829
+    },
+    {
+      "city": "Düsseldorf",
+      "region": "North Rhine-Westphalia",
+      "timezone": "Europe/Berlin",
+      "lat": 51.2277,
+      "lon": 6.7735
+    },
+    {
+      "city": "Leipzig",
+      "region": "Saxony",
+      "timezone": "Europe/Berlin",
+      "lat": 51.3397,
+      "lon": 12.3731
+    },
+    {
+      "city": "Dortmund",
+      "region": "North Rhine-Westphalia",
+      "timezone": "Europe/Berlin",
+      "lat": 51.5136,
+      "lon": 7.4653
+    },
+    {
+      "city": "Essen",
+      "region": "North Rhine-Westphalia",
+      "timezone": "Europe/Berlin",
+      "lat": 51.4556,
+      "lon": 7.0116
+    },
+    {
+      "city": "Bremen",
+      "region": "Bremen",
+      "timezone": "Europe/Berlin",
+      "lat": 53.0793,
+      "lon": 8.8017
+    },
+    {
+      "city": "Dresden",
+      "region": "Saxony",
+      "timezone": "Europe/Berlin",
+      "lat": 51.0504,
+      "lon": 13.7373
+    },
+    {
+      "city": "Hannover",
+      "region": "Lower Saxony",
+      "timezone": "Europe/Berlin",
+      "lat": 52.3759,
+      "lon": 9.732
+    },
+    {
+      "city": "Nürnberg",
+      "region": "Bavaria",
+      "timezone": "Europe/Berlin",
+      "lat": 49.4521,
+      "lon": 11.0767
+    }
+  ],
+  "street_suffixes": [
+    "straße",
+    "weg",
+    "allee",
+    "platz",
+    "gasse"
+  ],
+  "street_names": [
+    "Haupt",
+    "Bahnhof",
+    "Garten",
+    "Schul",
+    "Kirch",
+    "Berg",
+    "Wald",
+    "Linden",
+    "Schiller",
+    "Goethe"
+  ],
   "address_format": "{street}{suffix} {number}",
   "postal_format": "#####",
   "phone_format": "01## #######",
-  "email_domains": ["gmail.com", "web.de", "gmx.de", "t-online.de", "outlook.de"]
+  "email_domains": [
+    "gmail.com",
+    "web.de",
+    "gmx.de",
+    "t-online.de",
+    "outlook.de"
+  ]
 }
