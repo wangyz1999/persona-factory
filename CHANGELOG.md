@@ -26,4 +26,8 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Rendering to LLM system prompt (`roleplay` / `profile` styles) and markdown.
 - `persona-factory` CLI (`generate` / `pool` / `locales` / `presets` /
   `schema`).
-- Optional Claude-backed narrative enrichment (`[enrichment]` extra).
+- Optional LLM-backed narrative enrichment via Anthropic (default), OpenAI, or
+  OpenRouter — selected with `enrich(..., provider=...)`. The only part of the
+  library that touches the network; core generation stays fully offline.
+- Single `pip install persona-factory` bundles everything (polars DataFrame
+  export, YAML config loading, and all enrichment providers) — no extras.

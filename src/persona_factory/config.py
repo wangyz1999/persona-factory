@@ -136,13 +136,8 @@ class PersonaConfig(BaseModel):
         p = Path(path)
         text = p.read_text(encoding="utf-8")
         if p.suffix in {".yaml", ".yml"}:
-            try:
-                import yaml  # type: ignore[import-untyped]
-            except ImportError as exc:  # pragma: no cover - optional dep
-                raise ConfigError(
-                    "Loading YAML configs requires the 'yaml' extra: "
-                    "pip install persona-factory[yaml]"
-                ) from exc
+            import yaml  # type: ignore[import-untyped]
+
             data = yaml.safe_load(text)
         else:
             data = json.loads(text)

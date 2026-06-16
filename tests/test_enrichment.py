@@ -1,4 +1,4 @@
-"""Tests for the optional Claude enrichment module (mocked — no live API)."""
+"""Tests for the optional LLM enrichment module (mocked — no live API)."""
 
 from __future__ import annotations
 
@@ -7,7 +7,7 @@ from types import SimpleNamespace
 
 import pytest
 
-from persona_factory.enrichment.claude import _build_prompt, enrich
+from persona_factory.enrichment.llm import _build_prompt, enrich
 from persona_factory.exceptions import EnrichmentError
 from persona_factory.factory import PersonaFactory
 
@@ -29,9 +29,32 @@ class _FakeMessages:
 
 
 class _FakeClient:
+    """Stands in for an ``anthropic.Anthropic`` client."""
+
     def __init__(self, payload: dict) -> None:
         self.captured: dict = {}
         self.messages = _FakeMessages(payload, self.captured)
+
+
+class _FakeChatCompletions:
+    def __init__(self, payload: dict, capture: dict) -> None:
+        self._payload = payload
+        self._capture = capture
+
+    def create(self, **kwargs):  # type: ignore[no-untyped-def]
+        self._capture.update(kwargs)
+        message = SimpleNamespace(content=json.dumps(self._payload))
+        return SimpleNamespace(choices=[SimpleNamespace(message=message)])
+
+
+class _FakeOpenAIClient:
+    """Stands in for an ``openai.OpenAI`` client (chat.completions API)."""
+
+    def __init__(self, payload: dict) -> None:
+        self.captured: dict = {}
+        self.chat = SimpleNamespace(
+            completions=_FakeChatCompletions(payload, self.captured)
+        )
 
 
 def _persona():  # type: ignore[no-untyped-def]
@@ -98,7 +121,42 @@ def test_build_prompt_includes_persona_facts() -> None:
     assert "sample_dialogue" in prompt
 
 
-def test_missing_extra_raises_friendly_error(monkeypatch) -> None:
+# -- OpenAI / OpenRouter providers --------------------------------------------
+
+
+def test_enrich_openai_provider() -> None:
+    payload = {"bio": "b", "backstory": "s", "sample_dialogue": ["hi"]}
+    client = _FakeOpenAIClient(payload)
+    p = enrich(
+        _persona(),
+        provider="openai",
+        sample_dialogue=True,
+        client=client,
+    )
+    assert p.narrative.bio == "b"
+    assert p.narrative.sample_dialogue == ["hi"]
+    assert client.captured["model"] == "gpt-4o"
+    assert client.captured["response_format"] == {"type": "json_object"}
+
+
+def test_enrich_openrouter_default_model() -> None:
+    client = _FakeOpenAIClient({"bio": "b", "backstory": "s", "sample_dialogue": []})
+    enrich(_persona(), provider="openrouter", client=client)
+    assert client.captured["model"] == "anthropic/claude-sonnet-4-6"
+
+
+def test_enrich_explicit_model_overrides_default() -> None:
+    client = _FakeOpenAIClient({"bio": "b", "backstory": "s", "sample_dialogue": []})
+    enrich(_persona(), provider="openai", model="gpt-4o-mini", client=client)
+    assert client.captured["model"] == "gpt-4o-mini"
+
+
+def test_enrich_unknown_provider_raises() -> None:
+    with pytest.raises(EnrichmentError, match="Unknown provider"):
+        enrich(_persona(), provider="bogus", client=_FakeClient({}))
+
+
+def test_missing_sdk_raises_friendly_error(monkeypatch) -> None:
     import builtins
 
     real_import = builtins.__import__
@@ -109,5 +167,5 @@ def test_missing_extra_raises_friendly_error(monkeypatch) -> None:
         return real_import(name, *args, **kwargs)
 
     monkeypatch.setattr(builtins, "__import__", fake_import)
-    with pytest.raises(EnrichmentError, match="enrichment"):
+    with pytest.raises(EnrichmentError, match="anthropic"):
         enrich(_persona(), client=None)

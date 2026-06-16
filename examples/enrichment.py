@@ -1,8 +1,9 @@
-"""Optionally enrich a persona's backstory with Claude.
+"""Optionally enrich a persona's backstory with an LLM.
 
-Requires the enrichment extra and an API key:
-    uv sync --extra enrichment
-    export ANTHROPIC_API_KEY=sk-ant-...
+Core generation is offline; this step calls a model. It defaults to Anthropic,
+but ``enrich(..., provider="openai")`` and ``provider="openrouter"`` also work.
+
+    export ANTHROPIC_API_KEY=sk-ant-...   # or OPENAI_API_KEY / OPENROUTER_API_KEY
     uv run python examples/enrichment.py
 """
 

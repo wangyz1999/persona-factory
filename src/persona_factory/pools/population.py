@@ -75,19 +75,14 @@ class PersonaPool:
         )
 
     def to_dataframe(self) -> Any:
-        """Return a flat :class:`polars.DataFrame` (requires the ``polars`` extra).
+        """Return a flat :class:`polars.DataFrame`.
 
         Each persona becomes one row; nested domains are flattened into
         dotted columns (e.g. ``identity.given_name``, ``physical.height_cm``).
         List-valued attributes are kept as list columns.
         """
-        try:
-            import polars as pl
-        except ImportError as exc:  # pragma: no cover - optional dep
-            raise ImportError(
-                "PersonaPool.to_dataframe requires the 'polars' extra: "
-                "pip install 'persona-factory[polars]'"
-            ) from exc
+        import polars as pl
+
         rows = [_flatten_dict(p.to_dict()) for p in self._personas]
         return pl.DataFrame(rows)
 
