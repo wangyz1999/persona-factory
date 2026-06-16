@@ -4,6 +4,14 @@ All notable changes to this project are documented here. The format is based on
 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project
 adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2026-06-16
+
+### Fixed
+- Ship the `persona-factory` console script. The `[project.scripts]` entry point
+  landed after `0.1.0` was published, so the installed `0.1.0` wheel had no CLI
+  and `persona-factory` resolved to "command not found". Bumped the version so a
+  corrected wheel can be published (PyPI versions are immutable).
+
 ## [0.1.0] - 2026-06-16
 
 ### Added
