@@ -13,7 +13,7 @@
   <a href="https://pypi.org/project/persona-factory/"><img alt="PyPI" src="https://img.shields.io/pypi/v/persona-factory.svg"></a>
   <a href="https://pypi.org/project/persona-factory/"><img alt="Python versions" src="https://img.shields.io/pypi/pyversions/persona-factory.svg"></a>
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-green.svg"></a>
-  <a href="https://github.com/yunzhewa/persona-factory/actions"><img alt="CI" src="https://github.com/yunzhewa/persona-factory/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://github.com/wangyz1999/persona-factory/actions"><img alt="CI" src="https://github.com/wangyz1999/persona-factory/actions/workflows/ci.yml/badge.svg"></a>
   <img alt="Typed" src="https://img.shields.io/badge/typed-pydantic%20v2-blue.svg">
   <img alt="Code style: ruff" src="https://img.shields.io/badge/style-ruff-261230.svg">
 </p>

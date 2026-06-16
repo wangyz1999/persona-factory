@@ -43,10 +43,10 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yunzhewa/persona-factory"
-Repository = "https://github.com/yunzhewa/persona-factory"
-Issues = "https://github.com/yunzhewa/persona-factory/issues"
-Documentation = "https://github.com/yunzhewa/persona-factory#readme"
+Homepage = "https://github.com/wangyz1999/persona-factory"
+Repository = "https://github.com/wangyz1999/persona-factory"
+Issues = "https://github.com/wangyz1999/persona-factory/issues"
+Documentation = "https://github.com/wangyz1999/persona-factory#readme"
 
 [project.scripts]
 persona-factory = "persona_factory.cli:main"
